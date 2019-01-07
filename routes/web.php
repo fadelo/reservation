@@ -35,5 +35,6 @@ Route::get('/agent/ficheDeControle', 'AgentReservationsController@fiche') ->name
 // Routes pour Abonnée
 
 Route::get('/client', 'ClientPagesController@home') -> name('ClientHome');
+Route::resource('/client/reservations', 'ClientReservationsController');
 
 ?>

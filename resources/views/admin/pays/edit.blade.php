@@ -42,12 +42,12 @@
         <h1 class="box-title">Liste des pays</h1>
       </div>
       <div class="box-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="example1" class="table table-bordered table-striped" disaled="disabled">
                 <thead>
                 <tr>
                   <th>Code</th>
                   <th>Nom du pays</th>
-                  <th colspan="2" align="center">Action</th>
+                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -68,7 +68,7 @@
                 <tr>
                   <th>Code</th>
                   <th>Nom du pays</th>
-                  <th colspan="2" align="center">Action</th>
+                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
                 </tr>
                 </tfoot>
         </table>

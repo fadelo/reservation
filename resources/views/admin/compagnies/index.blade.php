@@ -41,7 +41,7 @@
               <th>Nom</th>
               <th>Téléphone</th>
               <th>Adresse</th>
-              <th colspan="3" style="text-align: center">Action</th>
+              <th colspan="3" style="text-align: center">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -52,7 +52,7 @@
               <th>Nom</th>
               <th>Téléphone</th>
               <th>Adresse</th>
-              <th colspan="3" style="text-align: center">Action</th>
+              <th colspan="3" style="text-align: center">Actions</th>
             </tr>
           </tfoot>
         </table>

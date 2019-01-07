@@ -44,7 +44,7 @@
                 <tr>
                   <th>Code</th>
                   <th>Nom du pays</th>
-                  <th colspan="2" style="text-align: center;" align="center">Action</th>
+                  <th colspan="2" style="text-align: center;" align="center">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@
                 <tr>
                   <th>Code</th>
                   <th>Nom du pays</th>
-                  <th colspan="2" style="text-align: center" align="center">Action</th>
+                  <th colspan="2" style="text-align: center" align="center">Actions</th>
                 </tr>
                 </tfoot>
         </table>

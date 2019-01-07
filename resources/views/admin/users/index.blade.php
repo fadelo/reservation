@@ -32,7 +32,7 @@
                                                 <th>Prénom</th>
                                                 <th>Téléphone</th>
                                                 <th>Type</th>
-                                                <th colspan="2" align="center">Actions</th>
+                                                <th colspan="2" align="center" style="text-align: center;">Actions</th>
                                                 
                                             </tr>
                                         </thead>
@@ -47,7 +47,7 @@
                                                   <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
                                                 </td>
                                                 <td align="center">
-                                                <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+                                                <a href="#"><i class="glyphicon glyphicon-trash " style="color:red;"></i></a>
                                                 </td>
                                                 
                                             </tr>
@@ -59,7 +59,7 @@
                                                 <th>Prénom</th>
                                                 <th>Téléphone</th>
                                                 <th>Type</th>
-                                                <th colspan="2" align="center">Action</th>
+                                                <th colspan="2" align="center" style="text-align: center;">Action</th>
                                           </tr>
                                         </tfoot>
                                     </table>

@@ -23,8 +23,12 @@
 			<div>
 				<form>
 					<div class="form-group">
-						<label class="label-control sr-only" for="heure">Heure</label>
-						<input type="time" name="heure" class="form-control" placeholder="ajouter une heure">
+						<label class="label-control" for="heure">Heure départ</label>
+						<input type="time" name="heureDpt" class="form-control" placeholder="ajouter une heure">
+					</div>
+					<div class="form-group">
+						<label class="label-control" for="heure">Heure enrégistrement</label>
+						<input type="time" name="heureEnreg" class="form-control" placeholder="ajouter une heure">
 					</div>
 					<div class="form-group">
 						<button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>
@@ -42,7 +46,8 @@
 					<thead>
 						<tr>
 							<th>Code</th>
-							<th>Heure</th>
+							<th>Heure départ</th>
+							<th>Heure RDV</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>
 					</thead>
@@ -52,7 +57,8 @@
 					<tfoot>
 						<tr>
 							<th>Code</th>
-							<th>Heure</th>
+							<th>Heure départ</th>
+							<th>Heure RDV</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>
 					</tfoot>

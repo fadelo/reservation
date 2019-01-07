@@ -54,7 +54,7 @@
                   <th>Code</th>
                   <th>Nom de la ville</th>
                   <th>Pays</th>
-                  <th colspan="2" align="center">Action</th>
+                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -69,7 +69,7 @@
                   <th>Code</th>
                   <th>Nom du pays</th>
                   <th>Pays</th>
-                  <th colspan="2" align="center">Action</th>
+                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
                 </tr>
                 </tfoot>
         </table>
