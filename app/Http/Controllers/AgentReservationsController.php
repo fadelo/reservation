@@ -23,7 +23,9 @@ class AgentReservationsController extends Controller
      */
     public function create()
     {
-        //
+        
+
+        return view ('agent/reservations/create');
     }
 
     /**
@@ -45,7 +47,7 @@ class AgentReservationsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view ('agent/reservations/show');
     }
 
     /**
@@ -56,7 +58,7 @@ class AgentReservationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view ('agent/reservations/edit');
     }
 
     /**
@@ -86,5 +88,11 @@ class AgentReservationsController extends Controller
     public function fiche(){
 
         return view ('agent/reservations/fiche');
+    }
+
+
+    public function cloture(){
+
+        return view ('agent/reservations/cloture');
     }
 }

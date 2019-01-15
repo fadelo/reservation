@@ -5,14 +5,13 @@
         Gestion des trajets <small>Cotonou - Parakou</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('trajets.index') }}"><i class="fa fa-bell-o"></i>Trajets</a></li>
+        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="{{ url('agent/trajets') }}"><i class="fa fa-exchange"></i>Trajets</a></li>
         <li class="active">Information complémentaires</li>
       </ol>
 @endsection
 
 @section('content')
-
 <div class="row">
 	<div class="col-md-6 col-xs-12">
 		<div class="box box-primary">
@@ -22,13 +21,19 @@
 			<div class="box-body">
 			<div>
 				<form>
-					<div class="form-group">
-						<label class="label-control" for="heure">Heure départ</label>
-						<input type="time" name="heureDpt" class="form-control" placeholder="ajouter une heure">
-					</div>
-					<div class="form-group">
-						<label class="label-control" for="heure">Heure enrégistrement</label>
-						<input type="time" name="heureEnreg" class="form-control" placeholder="ajouter une heure">
+					<div class="row">
+						<div class="col-md-6 col-xs-12">
+							<div class="form-group">
+								<label class="label-control" for="heure">Heure départ</label>
+								<input type="time" name="heureDpt" class="form-control" placeholder="ajouter une heure">
+							</div>
+						</div>
+						<div class="col-md-6 col-xs-12">
+							<div class="form-group">
+								<label class="label-control" for="heure">Heure enrégistrement</label>
+								<input type="time" name="heureEnreg" class="form-control" placeholder="ajouter une heure">
+							</div>
+						</div>		
 					</div>
 					<div class="form-group">
 						<button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>

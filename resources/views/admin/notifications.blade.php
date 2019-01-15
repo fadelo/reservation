@@ -5,7 +5,7 @@
         Panneau de notifications
       </h1>
       <ol class="breadcrumb">
-      <li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
         <li><a href="{{ route('notifications') }}"><i class="fa fa-bell-o"></i>Notifications</a></li>
       </ol>
       <hr>

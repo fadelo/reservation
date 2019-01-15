@@ -5,7 +5,7 @@
         Panneau de configurations
     </h1>
     <ol class="breadcrumb">
-   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        	<li><a href="{{ route('settings') }}"><i class="fa fa-gears"></i>Parametres</a></li>
     </ol>
 @stop

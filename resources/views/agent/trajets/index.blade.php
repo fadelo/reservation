@@ -5,8 +5,9 @@
         Gestion des trajets
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('trajets.index') }}"><i class="fa fa-bell-o"></i>Tableau de bord</a></li>
+        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="{{ url('agent/trajets') }}"><i class="fa fa-exchange"></i>Trajets</a></li>
+        <li>Tous les trajets</li>
       </ol>
 @endsection
 
@@ -67,7 +68,7 @@
                 <span class="input-group-btn">
                     <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
                 </span>
-          </div>	
+          	</div>	
 		</div>		
 	</div>
 
@@ -95,7 +96,7 @@
 						<td>Parakou</td>
 						<td>5000</td>
 						<td align="center">
-							<a href="{{ route('InfoTrajet') }}"><i class="glyphicon glyphicon-plus-sign" title="Informations suppémentaire"></i></a>
+							<a href="{{ url('agent/infoTrajet') }}"><i class="glyphicon glyphicon-plus-sign" title="Informations suppémentaire"></i></a>
 						</td>
 						<td align="center">
 							<a href="#"><i class="glyphicon glyphicon-edit" title="Modifier"></i></a>

@@ -8,6 +8,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('storage/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- select pinker -->
+  <link rel="stylesheet" href="{{ asset('storage/css/bootstrap-select.min.css') }}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('storage/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -35,7 +37,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/84A60109-4722-B547-83F0-4F944594AEFE/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/D50D5C43-2FD2-E649-8437-F4E3858B1430/abn/main.css"/><script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/84A60109-4722-B547-83F0-4F944594AEFE/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/D50D5C43-2FD2-E649-8437-F4E3858B1430/abn/main.css"/>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-green sidebar-mini">
 <div class="wrapper">
 
   <!-- Header  -->
@@ -129,13 +131,13 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">NAVIGATION</li>
-                <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i> <span>Tableau de bord</span></a></li> 
+                <li><a href="{{ route('ClientHome') }}"><i class="fa fa-dashboard"></i> <span>Tableau de bord</span></a></li> 
 
-                <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Compagnies</span></a></li>
+                <li><a href="{{ route('users.index') }}"><i class="fa fa-bus"></i> <span>Compagnies</span></a></li>
                 
-                <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-bus"></i> <span>Trajets</span></a></li>
+                <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-exchange"></i> <span>Trajets</span></a></li>
 
-                <li><a href="{{ route('reservations.index') }}"><i class="fa fa-users"></i> <span>Mes réservations</span></a></li>
+                <li><a href="{{ route('reservations.index') }}"><i class="fa fa-list"></i> <span>Mes réservations</span></a></li>
 
                 <li class="header">NOTIFICATIONS</li>
 
@@ -198,6 +200,8 @@
 <script src=" {{ asset('storage/bower_components/jquery/dist/jquery.min.js') }} "></script>
 <!-- Bootstrap 3.3.7 -->
 <script src=" {{ asset('storage/bower_components/bootstrap/dist/js/bootstrap.min.js') }} "></script>
+<!-- select pinker -->
+<script src="{{ asset('storage/js/bootstrap-select.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src=" {{ asset('storage/dist/js/adminlte.min.js') }} "></script>
 <!-- Flashy -->

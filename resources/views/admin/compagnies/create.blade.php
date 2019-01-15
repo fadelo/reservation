@@ -5,7 +5,7 @@
         Gestion des compagnies <small>Nouvelle compagnie</small>
     </h1>
     <ol class="breadcrumb">
-   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-bus"></i>Compagnies</a></li>
        <li>Ajout</li>
     </ol>
@@ -39,31 +39,31 @@
                                           <div class="row">
                                             <div class="col-md-6 col-xm-12">
                                               <div class="form-group">
-                                            <label for="exampleInputEmail1">Raison sociale <span class="etoile">*</span></label>
-                                            <input type="text" class="form-control required" name="nomComp" id="exampleInputEmail1" placeholder="Nom de la compagnie" >
+                                            <label for="nomComp">Raison sociale</label>
+                                            <input type="text" class="form-control required" name="nomComp" id="nomComp" placeholder="Nom de la compagnie" >
                                           </div>
                                           <div class="form-group">
-                                            <label>Description <span class="etoile">*</span></label>
+                                            <label for="desComp">Description</label>
                                             <textarea class="form-control required" rows="2" name="desComp" placeholder="Description de la compagnie"></textarea>
                                           </div>
                                           
                                             </div>
                                             <div class="col-md-6 col-xm-12">
                                             <div class="form-group">
-                                            <label for="exampleInputEmail1">N° RCCM </label>
-                                            <input type="text" class="form-control " name="numRCCM" id="exampleInputEmail1" placeholder="Numéro RCCM">
+                                            <label for="rccmComp">N° RCCM </label>
+                                            <input type="text" class="form-control " name="rccmComp" id="rccmComp" placeholder="Numéro RCCM">
                                           </div>
                                               <div class="form-group">
-                                            <label for="exampleInputEmail1">N° IFU </label>
-                                            <input type="text" class="form-control" name="numIFU" id="exampleInputEmail1" placeholder="Numéro IFU">
+                                            <label for="ifuComp">N° IFU </label>
+                                            <input type="text" class="form-control" name="ifuComp" id="ifuComp" placeholder="Numéro IFU">
                                           </div>
                                             </div>
                                           </div>
                                           <div class="row">
                                           	<div class="col-md-12 col-xs-12">
                                           		<div class="form-group">
-                                            <label for="exampleInputFile">Logo</label>
-                                            <input type="file" id="exampleInputFile">
+                                            <label for="logoComp">Logo</label>
+                                            <input type="file" name="logoComp" id="logoComp">
                                             <p class="help-block">Taille maximum : 2Mo</p>
                                           </div>
                                           	</div>
@@ -78,15 +78,15 @@
                                     <div class="box-body">
                                       <div class="col-md-6 col-xm-12">
                                         <div class="form-group">
-                                        <label for="telComp">N° de téléphone <span class="etoile">*</span></label>
-                                        <input type="text" class="form-control" name="numComp" placeholder="Numéro de téléphone" required>
+                                        <label for="telComp">N° de téléphone</label>
+                                        <input type="text" class="form-control" name="telComp" placeholder="Numéro de téléphone">
                                       </div>
                                       <div class="form-group">
-                                        <label for="emailComp">Email <span class="etoile">*</span></label>
-                                        <input type="Email" class="form-control" name="emailComp" placeholder="Adresse email" required>
+                                        <label for="emailComp">Email</label>
+                                        <input type="Email" class="form-control" name="emailComp" placeholder="Adresse email">
                                       </div>
                                       <div class="form-group">
-                                        <label for="adrCom">Adresse <span class="etoile">*</span></label>
+                                        <label for="adrComp">Adresse</label>
                                         <textarea class="form-control" rows="2" name="adrComp" placeholder="Adresse de la compagnie"></textarea>
                                       </div>
                                       </div>
@@ -102,19 +102,11 @@
                                         <div class="form-group">
                                             <div class="checkbox">
                                               <label class="checkbox">
-                                                <input type="checkbox" value="Wi-Fi">Wi-Fi
+                                                <input type="checkbox" name="wifi" value="Wi-Fi">Wi-Fi
                                             </label>
                                             <br>
                                             <label class="checkbox">
-                                                <input type="checkbox" value="Climatisation">Climatisation
-                                            </label>
-                                            <br>
-                                            <label class="checkbox">
-                                                <input type="checkbox" value="Sécurité à bord">Service de sécurité à bord
-                                            </label>
-                                            <br>
-                                            <label class="checkbox">
-                                                <input type="checkbox" value="Restauration à bord">Restauration à bord
+                                                <input type="checkbox" name="clim" value="Climatisation">Climatisation
                                             </label>
                                             </div>
                                             
@@ -131,21 +123,21 @@
                                     <div class="box-body">
                                       <div class="col-md-6 col-xm-12">
                                         <div class="form-group">
-                                        <label for="telComp">Compte bancaire <span class="etoile">*</span></label>
-                                        <input type="text" class="form-control" name="numBankComp" placeholder="Numéro de compte" required>
+                                        <label for="numBanqComp">Compte bancaire</label>
+                                        <input type="text" class="form-control" name="numBanqComp" placeholder="Numéro de compte">
                                       </div>
                                       <div class="row">
                                         <div class="col-md-6 col-xm-12">
                                          <div class="form-group">
-                                        <label for="emailComp">Mobile Money <span class="etoile">*</span></label>
-                                        <input type="Email" class="form-control" name="momoComp" placeholder="Numéro mobile money" required>
+                                        <label for="momoComp">Mobile Money</label>
+                                        <input type="text" class="form-control" name="momoComp" placeholder="Numéro mobile money">
                                       </div>
                                       
                                        </div>
                                        <div class="col-md-6 col-xm-12">
                                          <div class="form-group">
-                                        <label for="adrCom">Flooz <span class="etoile">*</span></label>
-                                        <input type="text" class="form-control" rows="2" name="floozComp" placeholder="Numéro flooz">
+                                        <label for="floozComp">Flooz</label>
+                                        <input type="text" class="form-control" name="floozComp" placeholder="Numéro flooz">
                                       </div>
                                       </div>
                                        
@@ -166,29 +158,30 @@
                                     <div class="row">
                                       <div class="col-md-3 col-xm-12">
                                           <div class="form-group">
-                                        <label for="durValidReser">Validité d'un ticket (en jour) <span class="etoile">*</span></label>
-                                        <input type="int" class="form-control" name="durValidReser" placeholder="Numéro de compte" required>
+                                        <label for="validiterReserv">Validité d'un ticket (en jour)</label>
+                                        <input type="int" class="form-control" name="validiterReserv" placeholder="validité d'un ticket" required>
                                       </div>
                                       </div>
                                       <div class="col-md-3 col-xm-12">
                                         <div class="form-group">
-                                        <label for="nbrJrAvtPenalite">Nombre de jour avant pénalité <span class="etoile">*</span></label>
-                                        <input type="text" class="form-control" name="nbrJrAvtPenalite" placeholder="Numéro de compte" required>
+                                        <label for="durPostPenalite">Nombre de jour avant pénalité</label>
+                                        <input type="text" class="form-control" name="durPostPenalite" placeholder="plage de repport">
                                       </div>
                                       </div>
                                       <div class="col-md-3 col-xm-12">
                                         <div class="form-group">
-                                        <label for="pourcentagPenalite">Pourcentage de pénalité (en %) <span class="etoile">*</span></label>
-                                        <input type="int" class="form-control" name="pourcentagPenalite" placeholder="Numéro de compte" required>
+                                        <label for="penaliter">Pourcentage de pénalité (en %)</label>
+                                        <input type="int" class="form-control" name="prnaliter" placeholder="pénalité en %">
                                       </div>
                                       </div>
                                     </div>
                                       
                                       <div class="row">
+                    
                                         <div class="col-md-9 col-xm-12">
                                           <div class="form-group">
-                                            <label for="msgAvert">Message d'avertissement <span class="etoile">*</span></label>
-                                            <textarea class="form-control" rows="2" name="msgAvert" required></textarea>
+                                            <label for="msgAverti">Message d'avertissement</label>
+                                            <textarea class="form-control" rows="2" name="msgAverti" ></textarea>
                                           </div>
                                       </div>
                                       </div>

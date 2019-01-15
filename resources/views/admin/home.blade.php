@@ -5,8 +5,8 @@
         Tableau de bord
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('Adminhome') }}"><i class="fa fa-bell-o"></i>Tableau de bord</a></li>
+        <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Tableau de bord</li>
       </ol>
 @endsection
 
@@ -19,7 +19,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>3</h3>
               <p>Compagnies</p>
             </div>
             <div class="icon">
@@ -61,11 +61,11 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p>Taux de réussite 1er semestre</p>
+              <h3>2</h3>
+              <p>Administrateurs</p>
             </div>
             <div class="icon">
-              <i class="ion ion-stats-bars"></i>
+              <i class="ion ion-person"></i>
             </div>
             <a href="#" class="small-box-footer">Voir détails <i class="fa fa-arrow-circle-right"></i></a>
           </div>
@@ -104,54 +104,35 @@
         <div class="col-md-4 col-xm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bell fa-fw"></i> Notifications Panel
+                            <i class="fa fa-bell fa-fw"></i> Panneau de notification
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="list-group">
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small"><em>4 minutes ago</em>
+                                    <i class="fa fa-comment fa-fw"></i> Nouvel avis
+                                    <span class="pull-right text-muted small"><em>il y a 4 minutes</em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small"><em>12 minutes ago</em>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 nouveaux abonnés
+                                    <span class="pull-right text-muted small"><em>il y a 12 minutes</em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small"><em>27 minutes ago</em>
+                                    <i class="fa fa-envelope fa-fw"></i> Message envoyé
+                                    <span class="pull-right text-muted small"><em>il y a 27 minutes</em>
+                                    </span>
+                                </a>
+                                
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-upload fa-fw"></i> Redémarage du serveur
+                                    <span class="pull-right text-muted small"><em>11:32</em>
                                     </span>
                                 </a>
                                 <a href="#" class="list-group-item">
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small"><em>43 minutes ago</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small"><em>11:32 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-bolt fa-fw"></i> Server Crashed!
-                                    <span class="pull-right text-muted small"><em>11:13 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-warning fa-fw"></i> Server Not Responding
-                                    <span class="pull-right text-muted small"><em>10:57 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-shopping-cart fa-fw"></i> New Order Placed
-                                    <span class="pull-right text-muted small"><em>9:49 AM</em>
-                                    </span>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <i class="fa fa-money fa-fw"></i> Payment Received
-                                    <span class="pull-right text-muted small"><em>Yesterday</em>
+                                    <i class="fa fa-bolt fa-fw"></i> Le serveur ne répond pas!
+                                    <span class="pull-right text-muted small"><em>11:13</em>
                                     </span>
                                 </a>
                             </div>

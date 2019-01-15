@@ -13,6 +13,7 @@ class Ville extends Model
     protected $foreignkey = 'idPays';
 
     protected $fillable = [
-    	'name'
+    	'ville',
+    	'idPays',
     ];
 }

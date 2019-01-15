@@ -24,7 +24,8 @@ class PaysFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|min:4|max:15',
+            'code'=>'required',
+            'pays'=>'required|min:4|max:15',  
         ];
     }
 /*

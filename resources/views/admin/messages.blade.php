@@ -5,7 +5,7 @@
         Panneau des messages
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+        <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
         <li><a href="{{ route('messages') }}"><i class="fa fa-envelope"></i>Messages</a></li>
       </ol>
       <hr>

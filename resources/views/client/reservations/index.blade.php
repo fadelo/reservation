@@ -2,11 +2,12 @@
 
 @section('content_header')
       <h1>
-        Mes réservations
+        Mes réservations 
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('ClientHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li class="active">Mes réservations</li>
+        <li><a href="{{ route('ClientHome') }}"><i class="fa fa-dashaboard"></i>Home</a></li>
+        <li><a href="{{ url('client/reservations') }}"><i class="fa fa-save"></i>Réservations</a></li>
+        <li class="active">Toutes mes réservations</li>
       </ol>
 @endsection
 

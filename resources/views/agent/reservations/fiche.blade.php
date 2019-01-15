@@ -2,11 +2,11 @@
 
 @section('content_header')
       <h1>
-        Gestion des réservations
+        Gestion des réservations <small>Fiche de contrôle</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('reservations.index') }}"><i class="fa fa-bell-o"></i>Réservations</a></li>
+        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="{{ url('agent/reservations/create') }}"><i class="fa fa-save"></i>Réservations</a></li>
         <li class="active">Fiche de contrôle</li>
       </ol>
 @endsection
@@ -19,6 +19,7 @@
 				<div class="box box-primary">
 					<div class="box-header">
 						<h1 class="box-title">Editer une fiche de contrôle</h1>
+						<button class="btn btn-primary pull-right" type="submit">Editer</button>
 					</div>
 					<div class="box-body">
 						<div class="col-md-4 col-xs-12">
@@ -29,24 +30,21 @@
 						</div>
 						<div class="col-md-4 col-xs-12">
 							<div class="form-group">
-								<label class="label-control" for="heureDepart">Heure de départ</label>
-								<input type="time" name="heureDepart" class="form-control">
+								<label class="label-control" for="heureDpt">Heure de départ</label>
+								<select class="form-control" name="heureDpt">
+									<option>7h</option>
+									<option>12h</option>
+								</select>
 							</div>
 						</div>
 						<div class="col-md-4 col-xs-12">
 							<div class="form-group">
 								<label class="label-control" for="villeDepart">Ville de départ</label>
 								<select class="form-control" name="villeDepart">
-									<option class="form-control">Cotonou</option>
-									<option class="form-control">Parakou</option>
+									<option>Cotonou</option>
+									<option>Parakou</option>
 								</select>
 							</div>
-						</div>
-					</div>
-					<div class="box-footer">
-						<div class="form-group pull-right">
-							<button class="btn btn-flat btn-warning" type="reset">Annuler</button>
-							<button class="btn btn-flat btn-primary" type="submit">Editer</button>
 						</div>
 					</div>
 				</div>

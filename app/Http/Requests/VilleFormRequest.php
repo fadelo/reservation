@@ -24,8 +24,8 @@ class VilleFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|min:4',
-            'namePays'=>'required|min:4'
+            'ville'=>'required|min:4',
+            'pays'=>'required'
 
         ];
     }

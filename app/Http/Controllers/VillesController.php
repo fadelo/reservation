@@ -19,9 +19,15 @@ class VillesController extends Controller
     public function index()
     {
         $villes = Ville::all();
-        $listpays = Pays::all();
+        $listpays = Pays::get();
+        $tab =[];
+        foreach ($listpays as $pays) {
+            array_push($tab, $pays->name);
+        }
+        //dd($tab);
 
-        return view ('admin/villes/index', compact('villes','listpays'));    }
+        return view ('admin/villes/index', compact('tab','villes'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -39,17 +45,18 @@ class VillesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store (VilleFormRequest $request, $namePays)
+    public function store (VilleFormRequest $request)
     {
-        $listpays = Pays::all();
-        $namePays = 'namePays';
-        $pays = Pays::findOrFail($namePays);
-        $idPays = $pays->id;
+
+        dd($request->ville);
+        
 
         Ville::create([
             'name'=>($request->name),
             'idPays'=>($request->idPays),
         ]);
+
+        Flashy::info('Le pays a été bien ajouté');
 
         return redirect::to('admin/villes/index');
     }

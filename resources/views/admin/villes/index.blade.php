@@ -5,7 +5,7 @@
         Gestion des villes
     </h1>
     <ol class="breadcrumb">
-   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        <li><a href="#"><i class="fa fa-gears"></i>Parametres</a></li>
        <li>Villes</li>
     </ol>
@@ -20,19 +20,17 @@
       <div class="box-body">
         <form action="{{ route('villes.store') }}" method="Post">
           {{ csrf_field() }}
-          <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }} ">
-            <label for="name" class="label-control">Nom de la ville</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer le nom de ville" value="{{ old('name') }}">
+          <div class="form-group {{ $errors->has('ville') ? 'has-error' : '' }} ">
+            <label for="ville" class="label-control">Nom de la ville</label>
+            <input type="text" class="form-control" name="ville" id="name" placeholder="Entrer le nom de ville" value="{{ old('name') }}">
             {!! $errors->first('name','<span class="help-block">:message</span>') !!}
           </div>
-          <div class="form-group {{ $errors->has('namePays' ? 'has-error' : '') }} ">
+          <div class="form-group {{ $errors->has('idPays' ? 'has-error' : '') }} ">
                 <label for='idPays' class="label-control">Pays</label>
-                <select class="form-control select2" name="namePays" id="idPays" style="width: 100%;">
-                  @foreach ($listpays as $pays)
-                    <option class="form-control">{{ $pays->name }}</option>
-                  @endforeach
+                <select class="form-control selectpicker" name="idPays" style="width: 100%;">
+                  <option>{{ $tab[0] }}</option>
                 </select>
-                {!! $errors->first('namePays', '<span class="help-block">:message</span>') !!}
+                {!! $errors->first('idPays', '<span class="help-block">:message</span>') !!}
           </div>
           <div>
             <button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>

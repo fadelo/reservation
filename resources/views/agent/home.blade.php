@@ -5,8 +5,8 @@
         Tableau de bord
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-bell-o"></i>Tableau de bord</a></li>
+        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Tableau de bord</li>
       </ol>
 @endsection
 

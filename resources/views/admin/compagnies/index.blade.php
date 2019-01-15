@@ -5,7 +5,7 @@
         Gestion des compagnies <small>Toutes les compagnies</small>
     </h1>
     <ol class="breadcrumb">
-   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-bus"></i>Compagnies</a></li>
        <li>Liste</li>
     </ol>
@@ -45,7 +45,14 @@
             </tr>
           </thead>
           <tbody>
-            
+            <tr>
+              <td>ATT</td>
+              <td>+229 69582145</td>
+              <td>Etoile Rouge</td>
+              <td align="center"><a href="{{ url('admin/compagnies/show') }}"><i class="glyphicon glyphicon-eye-open" title="Voir"></i></a></td>
+              <td align="center"><a href="{{ url('admin/compagnies/edit') }}"><i class="glyphicon glyphicon-edit"></i></a></td>
+              <td align="center"><a href="#"><i class="glyphicon glyphicon-trash " style="color:red;"></i></a></td>
+            </tr>
           </tbody>
           <tfoot>
               <tr>

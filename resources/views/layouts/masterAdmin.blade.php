@@ -8,6 +8,8 @@
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
   <link rel="stylesheet" href="{{ asset('storage/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- select pinker -->
+  <link rel="stylesheet" href="{{ asset('storage/css/bootstrap-select.min.css') }}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('storage/bower_components/font-awesome/css/font-awesome.min.css') }}">
   <!-- Ionicons -->
@@ -60,7 +62,7 @@
                   <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                       <i class="fa fa-envelope-o"></i>
-                      <span class="label label-danger">4</span>
+                      <span class="label label-danger">1</span>
                     </a>
                     <ul class="dropdown-menu">
                       <li class="header text-center" style="color: red">You have 4 messages</li>
@@ -122,7 +124,7 @@
                   <li class="dropdown notifications-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                           <i class="fa fa-comment"></i>
-                          <span class="label label-danger">8</span>
+                          <span class="label label-danger">1</span>
                       </a>
                       <ul class="dropdown-menu">
                           <li class="header text-center" style="color: red">Vous avez 8 nouveaux avis</li>
@@ -154,7 +156,7 @@
                   <li class="dropdown notifications-menu">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                           <i class="fa fa-bell-o"></i>
-                          <span class="label label-danger">10</span>
+                          <span class="label label-danger">5</span>
                       </a>
                       <ul class="dropdown-menu">
                           <li class="header text-center" style="color: red">Vous avez 10 notifications</li>
@@ -237,22 +239,23 @@
                     </span>
                   </a>
                   <ul class="treeview-menu">
-                    <li><a href="{{ route('pays.index') }}"><i class="fa fa-circle-o"></i> Pays</a></li>
-                    <li><a href="{{ route('villes.index') }}"><i class="fa fa-circle-o"></i> Ville</a></li>
+                    <li><a href="{{ route('pays.index') }}"><i class="fa fa-circle-o"></i> Gestion des pays</a></li>
+                    <li><a href="{{ route('villes.index') }}"><i class="fa fa-circle-o"></i> Gestion des villes</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Gestion des droits</a></li>
                   </ul>
                 </li>
 
                 <li class="header">NOTIFICATIONS</li>
 
                 <li><a href="{{ route('messages') }}"><i class="fa fa-envelope text-green"></i> <span>Messages</span><span class="pull-right-container">
-                  <span class="label label-danger pull-right">4</span>
+                  <span class="label label-danger pull-right">1</span>
                 </span></a> 
                 </li>
                 <li><a href="{{ route('notifications') }}"><i class="fa fa-bell-o text-yellow" ></i> <span>Notifications</span><span class="pull-right-container">
-                  <span class="label label-danger pull-right">10</span></a>
+                  <span class="label label-danger pull-right">5</span></a>
                 </li>
                 <li><a href="{{ route('comments') }}"><i class="fa fa-comment text-yellow" ></i> <span>Avis</span><span class="pull-right-container">
-                  <span class="label label-danger pull-right">10</span></a>
+                  <span class="label label-danger pull-right">1</span></a>
                 </li>
                 <li class="header">PROFIL</li>
                 <li><a href="#"><i class="fa fa-user text-red"></i> <span>Mon profil</span></a></li>
@@ -309,6 +312,8 @@
 <script src=" {{ asset('storage/bower_components/jquery/dist/jquery.min.js') }} "></script>
 <!-- Bootstrap 3.3.7 -->
 <script src=" {{ asset('storage/bower_components/bootstrap/dist/js/bootstrap.min.js') }} "></script>
+<!-- select pinker -->
+<script src="{{ asset('storage/js/bootstrap-select.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src=" {{ asset('storage/dist/js/adminlte.min.js') }} "></script>
 <!-- Flashy -->

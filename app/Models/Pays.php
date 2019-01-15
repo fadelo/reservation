@@ -11,5 +11,6 @@ class Pays extends Model
     protected $table = 'pays';
     protected $primaryKey = 'id';
 
-    protected $fillable = ['name'];
+    protected $fillable = ['code','pays'];
+
 }

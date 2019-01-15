@@ -5,8 +5,8 @@
         Gestion des trajets <small>Cotonou - Parakou</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="{{ route('trajets.index') }}"><i class="fa fa-bell-o"></i>Trajets</a></li>
+        <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li><a href="{{ url('agent/trajets') }}"><i class="fa fa-exchange"></i>Trajets</a></li>
         <li class="active">Information complémentaires</li>
       </ol>
 @endsection

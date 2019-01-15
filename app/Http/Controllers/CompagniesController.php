@@ -45,7 +45,7 @@ class CompagniesController extends Controller
      */
     public function show($id)
     {
-        //
+        return view ('admin/compagnies/show');
     }
 
     /**
@@ -56,7 +56,7 @@ class CompagniesController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view ('admin/compagnies/edit');
     }
 
     /**

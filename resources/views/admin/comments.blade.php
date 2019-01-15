@@ -5,7 +5,7 @@
         Panneau des avis
       </h1>
       <ol class="breadcrumb">
-      <li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+      <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
         <li><a href="{{ route('comments') }}"><i class="fa fa-comment"></i>Avis</a></li>
       </ol>
       <hr>

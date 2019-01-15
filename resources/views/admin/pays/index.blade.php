@@ -5,7 +5,7 @@
         Gestion des pays
     </h1>
     <ol class="breadcrumb">
-   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
+   		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        <li><a href="#"><i class="fa fa-gears"></i>Parametres</a></li>
        <li>Pays</li>
     </ol>
@@ -20,12 +20,18 @@
       <div class="box-body">
         <form action="{{ route('pays.store') }}" method="Post" autocomplete="off">
           {{ csrf_field() }}
+          <div class="form-group {{ $errors->has('code') ? 'has-error' : '' }}">
+            <label for="code" class="label-control">Nom du pays</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="Entrer le code du pays">
+            {!! $errors->first('code','<span class="help-block">:message</span>') !!}
+          </div>
           <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             <label for="name" class="label-control">Nom du pays</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer le nom du pays" value="{{ old('name') }}">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer le nom du pays">
             {!! $errors->first('name','<span class="help-block">:message</span>') !!}
           </div>
           <div>
+            
             <button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>
             <button class="btn btn-flat btn-primary pull-right" type="submit">Enregistrer</button>
           </div>
@@ -50,14 +56,17 @@
                 <tbody>
                     @foreach ($listpays as $pays)
                       <tr>
-                        <td>{{ $pays->id }}</td>
+                        <td>{{ $pays->code }}</td>
                         <td>{{ $pays->name }}</td>
                         <td align="center">
                            <a href="{{ route('pays.edit', $pays) }}"><i class="glyphicon glyphicon-edit"></i></a>
                         </td>
                         <td align="center">
-                          <a href="{{ route('pays.destroy', $pays) }}"><i class="glyphicon glyphicon-trash"  style="color:red"></i>
-                          </a> 
+                          <form action="{{ route('pays.destroy', $pays) }}" method="POST" onsubmit="return confirm('Etes-vous sûre ?')">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                            <a type="submit"><i class="glyphicon glyphicon-trash"  style="color:red"></i></a>
+                          </form> 
                         </td>
                       </tr>
                     @endforeach

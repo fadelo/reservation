@@ -1,141 +1,106 @@
-@extends('layouts/masterAdmin', ['title'=>'Users'])
 
-@section('content_header')
-      <h1>
-        Gestion des utilisateurs
-        <small>Abonées</small>
-      </h1>
-      <ol class="breadcrumb">
-      <li><a href="{{ route('Adminhome') }}"><i class="fa fa-home"></i>Home</a></li>
-        <li><a href="#"><i class="fa fa-users"></i>Utilisateurs</a></li>
-        <li class="active"></li>
-      </ol>
-@endsection
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.7 -->
+  <link rel="stylesheet" href="{{ asset('storage/bower_components/bootstrap/dist/css/bootstrap.min.css') }}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{{ asset('storage/bower_components/font-awesome/css/font-awesome.min.css') }}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{{ asset('storage/bower_components/Ionicons/css/ionicons.min.css') }}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ asset('storage/dist/css/AdminLTE.min.css') }}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ asset('storage/plugins/iCheck/square/blue.css') }}">
 
-@section('content')
-	<section class="content">
-	      <!-- Small boxes (Stat box) -->
-	      
-	      	<div class="row">
-	      		<div class="col-md-4 col-xs-12">
-	      			<div class="box box-primary">
-	      				<div class="box-header">
-	      					<h3 class="box-title">Nouvel utilisateur</h3>
-	      				</div>
-		      			<div class="box-body">
-		      				<div class="form-group">
-						      <label for="nomClient">Nom</label>
-						      <input type="text" class="form-control" name="nomClient">
-						    </div>
-						    <div class="form-group">
-						      <label for="prenomClient">Prénom</label>
-						      <input type="text" class="form-control" name="prenomClient">
-						    </div>
-						    <div class="form-group">
-						      <label for="telClient">Téléphone</label>
-						       <input type="text" class="form-control" name="telClient">
-				            </div>
-				            <div class="form-group">
-				                <label for="passClient">Mot de passe</label>
-				                <input type="password" class="form-control" name="passClient">
-				            </div>
-				            <div class="form-group">
-				                <label for="passClient">Confirmer mot de passe</label>
-				                <input type="password" class="form-control" name="passClient">
-				            </div>
-				            <div>
-				            	<button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>	
-				            	<button class="btn btn-flat btn-primary pull-right" type="submit">Enregistrer</button>
-				            </div>
-		      			</div>
-	      			</div>
-	      			
-	      		</div>
-	      		<div class="col-md-8 hidden-xs">
-	      			<div class="box box-primary">
-	      				<div class="box-header">
-				           <h3 class="box-title">Liste des abonnés</h3>        
-				     </div>
-				        <div class="box-body">
-				             
-				              <div class="table-responsive">
-				                                <table class="table table-striped table-bordered table-hover">
-				                                    <thead>
-				                                        <tr>
-				                                            <th>Code</th>
-				                                            <th>Nom</th>
-				                                            <th>Prénom</th>
-				                                            <th>Téléphone</th>
-				                                            <th colspan="2" align="center">Actions</th>
-				                                            
-				                                        </tr>
-				                                    </thead>
-				                                    <tbody>
-				                                        <tr>
-				                                            <td>1</td>
-				                                            <td>ISSA</td>
-				                                            <td>Marwane</td>
-				                                            <td>+227 09548789</td>
-				                                            <td align="center">
-				                                              <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
-				                                            </td>
-				                                            <td align="center">
-				                                            <a href="#"><i class="glyphicon glyphicon-remove-circle"></i></a>
-				                                            </td>
-				                                            
-				                                        </tr>
-				                                        <tr>
-				                                            <td>2</td>
-				                                            <td>KAO</td>
-				                                            <td>Jean</td>
-				                                            <td>+228 98548789</td>
-				                                            <td align="center">
-				                                              <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
-				                                            </td>
-				                                            <td align="center">
-				                                            <a href="#"><i class="glyphicon glyphicon-remove-circle"></i></a>
-				                                            </td>
-				                                            
-				                                        </tr>
-				                                        <tr>
-				                                            <td>3</td>
-				                                            <td>DAGBA</td>
-				                                            <td>Anglade</td>
-				                                            <td>+229 97542136</td>
-				                                            <td align="center">
-				                                              <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
-				                                            </td>
-				                                            <td align="center">
-				                                            <a href="#"><i class="glyphicon glyphicon-remove-circle"></i></a>
-				                                            </td>
-				                                            
-				                                        </tr>
-				                                        <tr>
-				                                            <td>4</td>
-				                                            <td>TRUMP</td>
-				                                            <td>Donald</td>
-				                                            <td>+229 95548789</td>
-				                                            <td align="center">
-				                                              <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
-				                                            </td>
-				                                            <td align="center">
-				                                            <a href="#"><i class="glyphicon glyphicon-remove-circle"></i></a>
-				                                            </td>
-				                                            
-				                                        </tr>
-				                                    </tbody>
-				                                    <tfoot>
-				                                      <tr>
-				                                        <th>Code</th>
-				                                            <th>Nom</th>
-				                                            <th>Prénom</th>
-				                                            <th>Téléphone</th>
-				                                            <th colspan="2" align="center">Action</th>
-				                                      </tr>
-				                                    </tfoot>
-				                                </table>
-				                            </div>
-	      			</div>
-				</div>		     
-	</section>   
-@endsection
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition register-page">
+<div class="register-box">
+  <div class="register-logo">
+    <a href="../../index2.html"><b>e-</b>Réservation</a>
+  </div>
+
+  <div class="register-box-body">
+    <p class="login-box-msg">Créer un compte</p>
+
+    <form action="../../index.html" method="post">
+      <div class="form-group has-feedback">
+        <input type="email" class="form-control" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Votre nom">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Votre prénom">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" placeholder="Votre téléphone">
+        <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Mot de passe">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" placeholder="Retaper le mot de passe">
+        <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <!-- 
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> I agree to the <a href="#">terms</a>
+            </label>
+          </div>
+      		-->
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">Créer</button>
+        </div>
+        <!-- /.col -->
+      </div>
+    </form>
+    <br>
+    <p style="text-align: center">Avez-vous déja un compte?<a href="#" class="text-center"> Connectez-vous</a></p>
+    
+  </div>
+  <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery 3 -->
+<script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{ asset('bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- iCheck -->
+<script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' /* optional */
+    });
+  });
+</script>
+</body>
+</html>

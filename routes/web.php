@@ -19,17 +19,19 @@ Route::resource('/admin/users','UsersController');
 Route::resource('/admin/pays', 'PaysController');
 Route::resource('/admin/villes', 'VillesController');
 Route::resource('/admin/compagnies', 'CompagniesController');
-
+Route::resource('/admin/reservations', 'AdminReservationsController');
 
 
 // Routes pour Agent
 
 Route::get('/agent', 'AgentPagesController@home') -> name('AgentHome');
+Route::resource('/agent/maCompagnie', 'AgentCompagnieController');
 Route::resource('/agent/trajets', 'AgentTrajetsController');
 Route::resource('/agent/heureDepart', 'AgentHeuresDepartController');
 Route::get('/agent/infoTrajet', 'InfoTrajetController@index') -> name('InfoTrajet');
 Route::resource('/agent/reservations', 'AgentReservationsController');
 Route::get('/agent/ficheDeControle', 'AgentReservationsController@fiche') ->name ('AgentFicheControle');
+Route::get('/agent/clotureReservation', 'AgentReservationsController@cloture') ->name ('AgentClotureReserv');
 
 
 // Routes pour Abonnée

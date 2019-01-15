@@ -15,7 +15,8 @@ class CreatePaysTable extends Migration
     {
         Schema::create('pays', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 15)->unique();
+            $table->integer('code')->unique();
+            $table->string('pays', 15)->unique();
         });
     }
 
