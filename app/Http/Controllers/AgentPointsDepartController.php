@@ -13,7 +13,8 @@ class AgentPointsDepartController extends Controller
      */
     public function index()
     {
-        //
+        dd('fadel');
+        return view ('agent/pointDepart');
     }
 
     /**

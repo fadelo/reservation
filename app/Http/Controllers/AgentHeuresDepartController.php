@@ -13,7 +13,7 @@ class AgentHeuresDepartController extends Controller
      */
     public function index()
     {
-        return view ('agent/trajets/heureDepart/index');
+        //
     }
 
     /**
@@ -34,7 +34,7 @@ class AgentHeuresDepartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('fadel');
     }
 
     /**

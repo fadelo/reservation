@@ -14,6 +14,8 @@ class Compagnie extends Model
     protected $fillable = [
     	'nom',
     	'description',
+        'rccm',
+        'ifu',
     	'telephone',
     	'adresse',
     	'email',

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
+use App\Models\Trajet;
+use App\Models\Ville;
+use App\Models\Compagnie;
 use Illuminate\Http\Request;
 
 class AdminReservationsController extends Controller
@@ -13,7 +17,25 @@ class AdminReservationsController extends Controller
      */
     public function index()
     {
-        //
+       $reservations = Reservation::where('idUser', '1')->orderBy('dateReserv', 'dsc')->get();
+        $nb = count($reservations);
+        $trjt = [];
+        $comp = [];
+        $vd = [];
+        $va = [];
+        foreach ($reservations as $reserv) {
+            $trajet = Trajet::whereId($reserv->idTrjt)->first();
+            $Compagnie = Compagnie::whereId($trajet->idComp)->first();
+            $villeDpt = Ville::whereId($trajet->idVilleDpt)->first()->ville;
+            $villeArr = Ville::whereId($trajet->idVilleArr)->first()->ville;
+            array_push($trjt, $trajet);
+            array_push($comp, $Compagnie);
+            array_push($vd, $villeDpt);
+            array_push($va, $villeArr);
+
+        }
+
+        return view ('admin/reservations/index', compact('reservations', 'nb', 'trjt', 'vd', 'va', 'comp'));
     }
 
     /**
@@ -56,7 +78,13 @@ class AdminReservationsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $reserv = Reservation::findOrFail($id);
+        $trajet = Trajet::whereId($reserv->idTrjt)->first();
+        $comp = Compagnie::whereId($trajet->idComp)->first();
+        $vd = Ville::whereId($trajet->idVilleDpt)->first()->ville;
+        $va = Ville::whereId($trajet->idVilleArr)->first()->ville;
+
+        return view ('admin/reservations/edit', compact('reserv', 'trajet', 'comp', 'vd', 'va'));
     }
 
     /**

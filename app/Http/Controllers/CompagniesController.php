@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compagnie;
 use Illuminate\Http\Request;
+use App\Http\Requests\CompagnieFormRequest;
+use App\Http\Controllers\Controller;
+use MercurySeries\Flashy\Flashy;
+use Illuminate\Support\Facades\Redirect;
 
 class CompagniesController extends Controller
 {
@@ -13,7 +18,9 @@ class CompagniesController extends Controller
      */
     public function index()
     {
-        return view ('admin.compagnies.index');
+        $compagnies = Compagnie::orderBy('nom')->get();
+
+        return view ('admin.compagnies.index', compact('compagnies'));
     }
 
     /**
@@ -23,7 +30,8 @@ class CompagniesController extends Controller
      */
     public function create()
     {
-        return view('admin/compagnies/create');
+        $comp = Compagnie::get();
+        return view('admin/compagnies/create', compact('comp'));
     }
 
     /**
@@ -32,9 +40,9 @@ class CompagniesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompagnieFormRequest $request)
     {
-        //
+        dd('fadel');
     }
 
     /**
@@ -56,7 +64,8 @@ class CompagniesController extends Controller
      */
     public function edit($id)
     {
-        return view ('admin/compagnies/edit');
+        $compagnie = Compagnie::findOrFail($id);
+        return view ('admin/compagnies/edit', compact('compagnie'));
     }
 
     /**
@@ -66,9 +75,31 @@ class CompagniesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CompagnieFormRequest $request, $id)
     {
-        //
+        $comp = Compagnie::findOrFail($id);
+        dd($comp);
+        $comp->update([
+            'nom' => ($request->nom),
+            'description' => ($request->des),
+            'rccm' => ($request->rccm),
+            'ifu' => ($request->ifu),
+            'telephone' => ($request->tel),
+            'adresse' => ($request->adr),
+            'email' => ($request->email),
+            'wifi' => ($request->wifi),
+            'climatisation' => ($request->clim),
+            'num_compte_bancaire' => ($request->bank),
+            'momo' => ($request->momo),
+            'flooz' => ($request->flooz),
+            'validiterReserv' => ($request->validiter),
+            'penaliter' => ($request->penaliter),
+            'durPostPenaliter' =>($request->postPenaliter),
+            'msgAverti' => ($request->msgAverti),
+        ]);
+
+        Flashy::info('La compagnie a été bien modifiée');
+        return redirect::to('admin/compagnies/index');
     }
 
     /**

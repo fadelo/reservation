@@ -15,7 +15,7 @@
 @section('content')
       <div class="row" style="margin-top: 5px;">
     <div class="col-md-4 col-xs-12">
-        <a href="{{ url('admin/users/create') }}" class="btn btn-primary btn-block">Attribuer un droit</a>
+        <a href="{{ route('userRole') }}" class="btn btn-primary btn-block">Attribuer un droit</a>
     </div>
     <div class="col-md-4 col-xs-12">
         

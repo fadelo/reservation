@@ -56,7 +56,11 @@ class PaysController extends Controller
            // 'nomPays'=> 'required|min:4',
        // ]);
 
-        Pays::create(['name'=>$request->name]);
+        Pays::create([
+		'code'=>$request->code,
+		'pays'=>$request->pays
+		]);
+	
 
         //flash('Le pays a bien été ajouter'); => Pour utiliser la function flash de helpers
 
@@ -105,7 +109,8 @@ class PaysController extends Controller
 
         //$fad = $pays->name;
 
-        $pays->update(['name'=>$request->name]);
+	$pays->update(['code'=>$request->code, 'pays'=>$request->pays]);
+        
 
         //Flashy::info(sprintf("Le pays '#%s' a bien été modifié en '#%s'",$fad, $pays->name));
 
@@ -121,11 +126,13 @@ class PaysController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {	
         $pays = Pays::findOrFail($id);
 
         $pays->delete();
 
-        Redirect::to('admin/pays');
+	Flashy::info('Le pays a bien été supprimé');
+
+        return Redirect::to('admin/pays');
     }
 }

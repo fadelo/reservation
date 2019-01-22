@@ -6,8 +6,8 @@
     </h1>
     <ol class="breadcrumb">
    		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
-       <li><a href="#"><i class="fa fa-gears"></i>Parametres</a></li>
-       <li>Pays</li>
+       <li><a href={{ route('pays.index') }}"><i class="fa fa-map"></i>Pays</a></li>
+       <li>Index</li>
     </ol>
 @stop
 
@@ -21,14 +21,14 @@
         <form action="{{ route('pays.store') }}" method="Post" autocomplete="off">
           {{ csrf_field() }}
           <div class="form-group {{ $errors->has('code') ? 'has-error' : '' }}">
-            <label for="code" class="label-control">Nom du pays</label>
-            <input type="text" class="form-control" name="code" id="code" placeholder="Entrer le code du pays">
+            <label for="code" class="label-control">Code du pays</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="Entrer le code du pays" value="{{ old('code')}}" autocomplete="off">
             {!! $errors->first('code','<span class="help-block">:message</span>') !!}
           </div>
-          <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-            <label for="name" class="label-control">Nom du pays</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer le nom du pays">
-            {!! $errors->first('name','<span class="help-block">:message</span>') !!}
+          <div class="form-group {{ $errors->has('pays') ? 'has-error' : '' }}">
+            <label for="pays" class="label-control">Nom du pays</label>
+            <input type="text" class="form-control" name="pays" id="pays" placeholder="Entrer le nom du pays" value="{{ old('pays')}}">
+            {!! $errors->first('pays','<span class="help-block">:message</span>') !!}
           </div>
           <div>
             
@@ -48,7 +48,7 @@
         <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Code</th>
+                  <th>Code du pays</th>
                   <th>Nom du pays</th>
                   <th colspan="2" style="text-align: center;" align="center">Actions</th>
                 </tr>
@@ -57,23 +57,23 @@
                     @foreach ($listpays as $pays)
                       <tr>
                         <td>{{ $pays->code }}</td>
-                        <td>{{ $pays->name }}</td>
+                        <td>{{ $pays->pays }}</td>
                         <td align="center">
                            <a href="{{ route('pays.edit', $pays) }}"><i class="glyphicon glyphicon-edit"></i></a>
                         </td>
                         <td align="center">
-                          <form action="{{ route('pays.destroy', $pays) }}" method="POST" onsubmit="return confirm('Etes-vous sûre ?')">
+                           <form action="{{ route('pays.destroy', $pays) }}" method="POST" onsubmit="return confirm('Lorsque vous supprimez un pays, vous supprimez toutes les villes qui lui sont reliés. Voulez-vous continuer la suppression ?')">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <a type="submit"><i class="glyphicon glyphicon-trash"  style="color:red"></i></a>
-                          </form> 
+                            <Button type="submit"><i class="glyphicon glyphicon-trash"  style="color:red"></i></Button>
+                          </form>
                         </td>
                       </tr>
                     @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Code</th>
+                  <th>Code du pays</th>
                   <th>Nom du pays</th>
                   <th colspan="2" style="text-align: center" align="center">Actions</th>
                 </tr>

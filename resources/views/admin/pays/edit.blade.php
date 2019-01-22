@@ -3,12 +3,12 @@
 @section('content_header')
 	<h1>
         Gestion des pays 
-        <small>Modification de {{ $paysedit->name }}</small>
+        <small>Modification</small>
     </h1>
     <ol class="breadcrumb">
    		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
-       <li><a href="#"><i class="fa fa-gears"></i>Parametres</a></li>
-       <li>Pays</li>
+       <li><a href="{{ route('pays.index') }}"><i class="fa fa-map"></i>Pays</a></li>
+       <li>Modifier</li>
     </ol>
 @stop
 
@@ -16,17 +16,22 @@
 	<div class="col-md-4 col-xs-12">
     <div class="box box-primary">
       <div class="box-header">
-        <h1 class="box-title">Modifier Pays : {{ $paysedit->name }} </h1>
+        <h1 class="box-title">Modifier un pays</h1>
       </div>
       <div class="box-body">
         <form action="{{ route('pays.update', $paysedit) }}" method="Post">
           {{ csrf_field() }}
           <!-- <input type="hidden" name="_method" value="PUT"> -->
           {{ method_field('PUT') }}
+	  <div class="form-group {{ $errors->has('code') ? 'has-error' : '' }}">
+            <label for="code" class="label-control">Code du pays</label>
+            <input type="text" class="form-control" name="code" id="code" placeholder="Entrer le code du pays" value="{{ old('code') ?? $paysedit->code }}">
+            {!! $errors->first('code','<span class="help-block">:message</span>') !!}
+          </div>
           <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-            <label for="name" class="label-control">Nom du pays</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Entrer le nom du pays" value="{{ old('name') ?? $paysedit->name }}">
-            {!! $errors->first('name','<span class="help-block">:message</span>') !!}
+            <label for="pays" class="label-control">Nom du pays</label>
+            <input type="text" class="form-control" name="pays" id="pays" placeholder="Entrer le nom du pays" value="{{ old('pays') ?? $paysedit->pays }}">
+            {!! $errors->first('pays','<span class="help-block">:message</span>') !!}
           </div>
           <div>
             <a href="{{ route('pays.index') }}" class="btn btn-flat btn-warning pull-left">Annuler</a>
@@ -36,48 +41,5 @@
       </div>
     </div>
   </div>
-  <div class="col-md-8 col-xs-12">
-    <div class="box box-primary">
-      <div class="box-header">
-        <h1 class="box-title">Liste des pays</h1>
-      </div>
-      <div class="box-body">
-        <table id="example1" class="table table-bordered table-striped" disaled="disabled">
-                <thead>
-                <tr>
-                  <th>Code</th>
-                  <th>Nom du pays</th>
-                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                    @foreach ($listpays as $pays)
-                      <tr>
-                        <td>{{ $pays->id }}</td>
-                        <td>{{ $pays->name }}</td>
-                        <td align="center">
-                           <a href="#"><i class="glyphicon glyphicon-edit"></i></a>
-                        </td>
-                        <td align="center">
-                            <a href="#"><i class="glyphicon glyphicon-trash" style="color: red;"></i></a>
-                        </td>
-                      </tr>
-                    @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                  <th>Code</th>
-                  <th>Nom du pays</th>
-                  <th colspan="2" align="center" style="text-align: center;">Actions</th>
-                </tr>
-                </tfoot>
-        </table>
-      </div>
-      <div class="box-footer">
-        <div class="pull-right">
-          {{ $listpays->links('vendor.pagination.simple-default') }}
-        </div>
-      </div>
-    </div>
-  </div>
+  
 @stop

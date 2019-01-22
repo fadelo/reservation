@@ -23,5 +23,5 @@ class LieuEmbarqTableSeeder extends Seeder
         	'idTrjt'=>'1',
         	'lieuEmbarq'=>'Stade',
         ]);
-    };
+    }
 }

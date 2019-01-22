@@ -23,5 +23,17 @@ class UsersTableSeeder extends Seeder
           'password'=>'123456789',
 
       	]);
+
+        User::create([
+          'id'=>'2',
+          'nom'=>'KOKOU',
+          'prenom'=>'Jean',
+          'telephone'=>'+2299752152',
+          'idVille'=>'1',
+          'idComp'=>'1',
+          'email'=>'kjean@fadlab.com',
+          'password'=>'123456789',
+
+        ]);
     }
 }

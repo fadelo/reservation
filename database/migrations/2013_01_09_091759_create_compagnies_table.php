@@ -16,18 +16,20 @@ class CreateCompagniesTable extends Migration
         Schema::create('compagnies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom', 30);
-            $table->string('description');
+            $table->string('description', 255);
+            $table->string('rccm');
+            $table->string('ifu');
             $table->string('telephone', 20);
             $table->string('adresse', 50);
             $table->string('email', 100);
-            $table->string('wifi', 3);
-            $table->string('climatisation', 3);
+            $table->boolean('wifi')->nullable();
+            $table->boolean('climatisation')->nullable();
             $table->string('num_compte_bancaire', 50);
             $table->string('momo', 12);
             $table->string('flooz', 12);
-            $table->time('validiterReserv');
+            $table->integer('validiterReserv');
             $table->integer('penaliter');
-            $table->time('durPostPenaliter');
+            $table->integer('durPostPenaliter');
             $table->string('msgAverti');
             $table->timestamps();
         });

@@ -15,20 +15,23 @@ Route::get('/admin', 'AdminPagesController@home') -> name('Adminhome');
 Route::get('/admin/messages','AdminPagesController@message') -> name('messages');
 Route::get('/admin/notifications','AdminPagesController@notification') -> name('notifications');
 Route::get('/admin/comments','AdminPagesController@comment') -> name('comments');
+Route::get('/admin/role', 'RoleController@create')->name('userRole');
+Route::get('/admin/trajets', 'AdminTrajetsController@index')->name('adminTrajet');
 Route::resource('/admin/users','UsersController');
 Route::resource('/admin/pays', 'PaysController');
 Route::resource('/admin/villes', 'VillesController');
 Route::resource('/admin/compagnies', 'CompagniesController');
-Route::resource('/admin/reservations', 'AdminReservationsController');
+Route::resource('/admin/mesReservations', 'AdminReservationsController');
 
 
 // Routes pour Agent
 
 Route::get('/agent', 'AgentPagesController@home') -> name('AgentHome');
 Route::resource('/agent/maCompagnie', 'AgentCompagnieController');
-Route::resource('/agent/trajets', 'AgentTrajetsController');
+Route::resource('/agent/trajets', 'TrajetsController');
 Route::resource('/agent/heureDepart', 'AgentHeuresDepartController');
-Route::get('/agent/infoTrajet', 'InfoTrajetController@index') -> name('InfoTrajet');
+Route::resource('/agent/lieuEmbarq', 'AgentLieuEmbarqController');
+Route::get('/agent/infoTrajet', 'TrajetsController@info') -> name('InfoTrajet');
 Route::resource('/agent/reservations', 'AgentReservationsController');
 Route::get('/agent/ficheDeControle', 'AgentReservationsController@fiche') ->name ('AgentFicheControle');
 Route::get('/agent/clotureReservation', 'AgentReservationsController@cloture') ->name ('AgentClotureReserv');
@@ -37,6 +40,8 @@ Route::get('/agent/clotureReservation', 'AgentReservationsController@cloture') -
 // Routes pour Abonnée
 
 Route::get('/client', 'ClientPagesController@home') -> name('ClientHome');
-Route::resource('/client/reservations', 'ClientReservationsController');
+Route::get('/client/compagnies', 'ClientCompagniesController@index')-> name('clientComp');
+Route::get('/client/trajets', 'ClientTrajetsController@index')->name('clientTrajet');
+Route::resource('/client/mes_reservations', 'ClientReservationsController');
 
 ?>

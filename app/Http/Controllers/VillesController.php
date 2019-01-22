@@ -7,6 +7,8 @@ use App\Models\Pays;
 use Illuminate\Http\Request;
 use App\Http\Requests\VilleFormRequest;
 use App\Http\Controllers\Controller;
+use MercurySeries\Flashy\Flashy;
+use Illuminate\Support\Facades\Redirect;
 
 
 class VillesController extends Controller
@@ -18,15 +20,17 @@ class VillesController extends Controller
      */
     public function index()
     {
-        $villes = Ville::all();
+        $villes = Ville::orderBy('ville')->get();
         $listpays = Pays::get();
         $tab =[];
-        foreach ($listpays as $pays) {
-            array_push($tab, $pays->name);
-        }
+        foreach ($villes as $ville) {
+            $pays = Pays::whereId($ville->idPays)->first()->pays;
+            array_push($tab, $pays);
+        };
+        $nb = count($villes);
         //dd($tab);
 
-        return view ('admin/villes/index', compact('tab','villes'));
+        return view ('admin/villes/index', compact('villes', 'listpays', 'tab', 'nb'));
     }
 
     /**
@@ -47,18 +51,17 @@ class VillesController extends Controller
      */
     public function store (VilleFormRequest $request)
     {
-
-        dd($request->ville);
-        
+        $idPays = Pays::wherePays($request->input('pays'))->first()->id;
+           
 
         Ville::create([
-            'name'=>($request->name),
-            'idPays'=>($request->idPays),
+            'ville'=>($request->ville),
+            'idPays'=>($idPays),
         ]);
 
-        Flashy::info('Le pays a été bien ajouté');
+        Flashy::info('La ville a été bien ajouté');
 
-        return redirect::to('admin/villes/index');
+        return redirect::back();
     }
 
     /**
@@ -80,8 +83,16 @@ class VillesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $villeEdit = Ville::findOrFail($id);
+        $listpays = Pays::get();
+        $paysEdit = Pays::whereId($villeEdit->idPays)->first()->pays;
+
+        return view ('admin.villes.edit', compact(['villeEdit','listpays', 'paysEdit']));
     }
+        
+    
+        
+    
 
     /**
      * Update the specified resource in storage.
@@ -90,9 +101,19 @@ class VillesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(VilleFormRequest $request, $id)
     {
-        //
+        $ville = Ville::findOrFail($id);
+        $idPays = Pays::wherePays($request->input('pays'))->first()->id;
+        
+        $ville->update([
+            'ville'=>($request->ville),
+            'idPays'=>($idPays),
+            ]);
+
+        Flashy::info('La ville a été modifié');
+
+        return redirect::to('admin/villes');   
     }
 
     /**
@@ -103,6 +124,10 @@ class VillesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Ville::destroy($id);
+
+        Flashy::info('La ville a été supprimé');
+
+        return Redirect::back();
     }
 }

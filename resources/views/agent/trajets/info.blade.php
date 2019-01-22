@@ -20,7 +20,8 @@
 			</div>
 			<div class="box-body">
 			<div>
-				<form>
+				<form action="{{ route('heureDepart.store') }}" autocomplete="off">
+					{{ csrf_field() }}
 					<div class="row">
 						<div class="col-md-6 col-xs-12">
 							<div class="form-group">
@@ -50,20 +51,24 @@
         		<table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
 					<thead>
 						<tr>
-							<th>Code</th>
+							
 							<th>Heure départ</th>
 							<th>Heure RDV</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						
+						@foreach ($heureDpt as $heure)
+							<tr>
+								<td>{{ $heure->heureDpt }}</td>
+								<td>{{ $heure->heureEnreg }}</td>
+							</tr>
+						@endforeach
 					</tbody>
 					<tfoot>
 						<tr>
 							<th>Code</th>
 							<th>Heure départ</th>
-							<th>Heure RDV</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>
 					</tfoot>
@@ -82,14 +87,16 @@
 				<h1 class="box-title">Points d'embarquement</h1>
 			</div>
 			<div class="box-body">
-				<form>
-					<div class="form-group">
-						<label class="sr-only label-control" for="lieu">Lieu</label>
+				<form action="{{ route('lieuEmbarq.store') }}" autocomplete="off">
+					{{ csrf_field() }}
+					<div class="form-group {{ $errors->has('lieu') ? 'has-error' : '' }}">
+						<label class="label-control" for="lieu">Lieu d'embarquement</label>
 						<input type="text" name="lieu" class="form-control" placeholder="entrer un lieu">
+						{!!$errors->first('lieu', '<span class="help-block">:message</span>') !!}
 					</div>
 					<div class="form-group">
-						<button class="btn btn-flat btn-warning pull-left">Annuler</button>
-						<button class="btn btn-flat btn-primary pull-right">Enregistrer</button>
+						<button class="btn btn-flat btn-warning pull-left" type="reset">Annuler</button>
+						<button class="btn btn-flat btn-primary pull-right" type="submit">Enregistrer</button>
 					</div>
 				</form>
 
@@ -101,17 +108,19 @@
         		<table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
 					<thead>
 						<tr>
-							<th>Code</th>
 							<th>Lieu</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
-						
+						@foreach ($lieuEmbarq as $lieu)
+							<tr>
+								<td>{{ $lieu->lieuEmbarq }}</td>
+							</tr>
+						@endforeach
 					</tbody>
 					<tfoot>
 						<tr>
-							<th>Code</th>
 							<th>Lieu</th>
 							<th colspan="2" style="text-align: center;">Actions</th>
 						</tr>

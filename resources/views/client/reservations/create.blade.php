@@ -13,5 +13,5 @@
 
 @section('content')
 	
-	<a href="{{ url('client/reservations') }}">Retour vers mes réservations</a>
+	<a href="{{ route('mes_reservations.index') }}">Retour vers mes réservations</a>
 @endsection

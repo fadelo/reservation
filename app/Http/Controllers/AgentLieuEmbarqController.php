@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AgentTrajetsController extends Controller
+class AgentLieuEmbarqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class AgentTrajetsController extends Controller
      */
     public function index()
     {
-        return view ('agent/trajets/index');
+        
     }
 
     /**
@@ -23,7 +23,7 @@ class AgentTrajetsController extends Controller
      */
     public function create()
     {
-        return view ('agent/trajets/create');
+        //
     }
 
     /**
@@ -32,9 +32,9 @@ class AgentTrajetsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LieuEmbarqRequest $request)
     {
-        //
+        
     }
 
     /**

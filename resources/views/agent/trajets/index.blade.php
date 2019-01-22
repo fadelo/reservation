@@ -6,7 +6,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="{{ route('AgentHome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
-        <li><a href="{{ url('agent/trajets') }}"><i class="fa fa-exchange"></i>Trajets</a></li>
+        <li><a href="{{ route('trajets.index') }}"><i class="fa fa-exchange"></i>Trajets</a></li>
         <li>Tous les trajets</li>
       </ol>
 @endsection
@@ -19,7 +19,8 @@
   			Ajouter un tajet
 			</button>
 			<!-- trajet modal -->
-		<form>
+		<form action="{{ route('trajets.store') }}" method="Post">
+			{{ csrf_field() }}
 			<div class="modal fade" id="trajetModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog" role="document">
 			    <div class="modal-content">
@@ -31,27 +32,29 @@
 			      </div>
 			      <div class="modal-body">
 			        <div class="form-group">
-			        	<label class="label-control" for="depart">Ville de départ</label>
-			        	<select class="form-control">
-			        		<option>Cotonou</option>
-			        		<option>Parakou</option>
+			        	<label class="label-control" for="villeDpt">Ville de départ</label>
+			        	<select class="form-control selectpicker" name="villeDpt">
+			        		@foreach ($villes as $ville)
+			        			<option>{{ $ville->ville }}</option>
+			        		@endforeach
 			        	</select>
 			        </div>
 			        <div class="form-group">
-			        	<label class="label-control" for="depart">Ville de départ</label>
-			        	<select class="form-control">
-			        		<option>Cotonou</option>
-			        		<option>Parakou</option>
+			        	<label class="label-control" for="villeArr">Ville d'arrivée</label>
+			        	<select class="form-control selectpicker" name="villeArr">
+			        		@foreach ($villes as $ville)
+			        			<option>{{ $ville->ville }}</option>
+			        		@endforeach
 			        	</select>
 			        </div>
 			        <div class="form-group">
 			        	<label class="label-control" for="tarif">Tarif</label>
-			        	<input type="integer" class="form-control" name="tarif">
+			        	<input type="number" class="form-control" name="tarif">
 			        </div>
 			      </div>
 			      <div class="modal-footer">
 			        <button type="button" class="btn btn-flat btn-warning" data-dismiss="modal">Fermer</button>
-			        <button type="button" class="btn btn-flat btn-primary">Enregistrer</button>
+			        <button type="submit" class="btn btn-flat btn-primary">Enregistrer</button>
 			      </div>
 			    </div>
 			  </div>
@@ -82,37 +85,44 @@
 			
 				<theader>
 					<tr>
-						<th>Code</th>
 						<th>Départ</th>
 						<th>Arrivé</th>
 						<th>Tarif</th>
-						<th colspan="3" style="text-align: center">Action</th>
+						<th colspan="4" style="text-align: center">Actions</th>
 					</tr>
 				</theader>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Cotonou</td>
-						<td>Parakou</td>
-						<td>5000</td>
-						<td align="center">
-							<a href="{{ url('agent/infoTrajet') }}"><i class="glyphicon glyphicon-plus-sign" title="Informations suppémentaire"></i></a>
-						</td>
-						<td align="center">
-							<a href="#"><i class="glyphicon glyphicon-edit" title="Modifier"></i></a>
-						</td>
-						<td align="center">
-							<a href="#"><i class="glyphicon glyphicon-trash" title="Supprimer" style="color: red"></i></a>
-						</td>
-					</tr>
+					@for ($i = 0; $i < $nb; $i++)
+						<tr>
+							<td>{{ $tabDpt[$i] }}</td>
+							<td>{{ $tabArr[$i] }}</td>
+							<td>{{ $trajets[$i]->tarif }}</td>
+							<td align="center">
+								<a href="{{ route('heureDepart.index') }}"><i class="glyphicon glyphicon-time" title="Heures de départ"></i></a>
+							</td>
+							<td align="center">
+								<a href="{{ route('lieuEmbarq.index') }}"><i class="glyphicon glyphicon-map-marker" title="Lieu d'embarquement"></i></a>
+							</td>
+							<td align="center">
+								<a href="#"  data-toggle="modal" data-target="#editTrajetModal" title="Modifier"><i class="glyphicon glyphicon-edit"></i>
+								</a>
+							</td>
+							<td align="center">
+								<form action="{{ route('trajets.destroy', $trajets[$i]) }}" method="Post" onsubmit="return confirm('Voulez-vous vraiment supprimer ce trajet ? Cette action est irréverssible')">
+									{{ csrf_field() }}
+									{{ method_field('DELETE') }}
+									<button><i class="glyphicon glyphicon-trash" title="Supprimer" style="color: red;"></i></button>
+								</form>
+							</td>
+						</tr>
+					@endfor
 				</tbody>
 				<tfooter>
 					<tr>
-						<th>Code</th>
 						<th>Départ</th>
 						<th>Arrivé</th>
 						<th>Tarif</th>
-						<th colspan="3" style="text-align: center">Action</th>
+						<th colspan="4" style="text-align: center">Actions</th>
 					</tr>
 				</tfooter>
 			</table>
@@ -124,3 +134,8 @@
 	</div>
 
 @endsection
+
+
+
+
+

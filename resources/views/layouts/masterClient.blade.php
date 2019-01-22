@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>FANAP | {{ $title }} </title>
+  <title>e | {{ $title }} </title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -45,9 +45,9 @@
     <!-- Logo -->
       <a href="{{route('Adminhome')}}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini">F - R</span>
+          <span class="logo-mini">e-r</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg">FANAP - Réservation</span>
+          <span class="logo-lg">e-Réservation</span>
       </a>
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
@@ -133,11 +133,22 @@
                 <li class="header">NAVIGATION</li>
                 <li><a href="{{ route('ClientHome') }}"><i class="fa fa-dashboard"></i> <span>Tableau de bord</span></a></li> 
 
-                <li><a href="{{ route('users.index') }}"><i class="fa fa-bus"></i> <span>Compagnies</span></a></li>
+                <li><a href="{{ route('clientComp') }}"><i class="fa fa-bus"></i> <span>Compagnies</span></a></li>
                 
-                <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-exchange"></i> <span>Trajets</span></a></li>
-
-                <li><a href="{{ route('reservations.index') }}"><i class="fa fa-list"></i> <span>Mes réservations</span></a></li>
+                <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-save"></i>
+                    <span>Réservations</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                  <ul class="treeview-menu">
+                    <li><a href="{{ route('clientTrajet') }}"><i class="fa fa-circle-o"></i> Voir les trajets</a></li>
+                    <li><a href="{{ route('mes_reservations.create') }}"><i class="fa fa-circle-o"></i> Réservez directement</a></li>
+                    <li><a href="{{ route('mes_reservations.index') }}"><i class="fa fa-circle-o"></i> Mes réservations</a></li>
+                  </ul>
+                </li>
 
                 <li class="header">NOTIFICATIONS</li>
 

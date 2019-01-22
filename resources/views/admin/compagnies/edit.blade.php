@@ -7,14 +7,16 @@
     <ol class="breadcrumb">
    		<li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
        <li><a href="{{ route('compagnies.index') }}"><i class="fa fa-bus"></i>Compagnies</a></li>
-       <li>Modifier une compagnie</li>
+       <li>Modification</li>
     </ol>
 @stop
 
 @section('content')
     <div class="row">
       <div class="col-md-12 col-xm-12">
-      <form>
+      <form action="{{ route('compagnies.update', $compagnie) }}" method="Post">
+        {{ csrf_field() }}
+        {{ method_field('PUT') }}
         <div class="box box-primary">
         <div class="box-header">
              <h1 class="box-title">Modification d'une compagnie</h1>
@@ -39,30 +41,30 @@
                                           <div class="row">
                                             <div class="col-md-6 col-xm-12">
                                               <div class="form-group">
-                                            <label for="exampleInputEmail1">Raison sociale</label>
-                                            <input type="text" class="form-control required" name="nomComp" id="nomComp" placeholder="Nom de la compagnie" >
+                                            <label for="nom" class="label-control">Raison sociale</label>
+                                            <input type="text" class="form-control" name="nom"  placeholder="Nom de la compagnie" value="{{ old('nom') ?? $compagnie->nom }}" >
                                           </div>
                                           <div class="form-group">
-                                            <label>Description</label>
-                                            <textarea class="form-control required" rows="2" name="desComp" placeholder="Description de la compagnie"></textarea>
+                                            <label for="des" class="label-control">Description</label>
+                                            <textarea class="form-control" rows="2" name="des" placeholder="Description de la compagnie">{{ old('des') ?? $compagnie->description }}</textarea>
                                           </div>
                                           
                                             </div>
                                             <div class="col-md-6 col-xm-12">
                                             <div class="form-group">
-                                            <label for="exampleInputEmail1">N° RCCM </label>
-                                            <input type="text" class="form-control " name="numRCCM" id="numRCCM" placeholder="Numéro RCCM">
+                                            <label for="rccm" class="label-control">N° RCCM </label>
+                                            <input type="text" class="form-control " name="rccm" placeholder="Numéro RCCM" value="{{ old('rccm') ?? $compagnie->rccm }}" >
                                           </div>
                                               <div class="form-group">
-                                            <label for="exampleInputEmail1">N° IFU </label>
-                                            <input type="text" class="form-control" name="numIFU" id="numIFU" placeholder="Numéro IFU">
+                                            <label for="ifu" class="label-control">N° IFU </label>
+                                            <input type="text" class="form-control" name="ifu" id="ifu" placeholder="Numéro IFU" value="{{ old('ifu') ?? $compagnie->ifu }}">
                                           </div>
                                             </div>
                                           </div>
                                           <div class="row">
                                           	<div class="col-md-12 col-xs-12">
                                           		<div class="form-group">
-                                            <label for="logoComp">Logo</label>
+                                            <label for="logoComp" class="label-control">Logo</label>
                                             <input type="file" id="logoComp">
                                             <p class="help-block">Taille maximum : 2Mo</p>
                                           </div>
@@ -78,16 +80,16 @@
                                     <div class="box-body">
                                       <div class="col-md-6 col-xm-12">
                                         <div class="form-group">
-                                        <label for="telComp">N° de téléphone</label>
-                                        <input type="text" class="form-control" name="numComp" placeholder="Numéro de téléphone" required>
+                                        <label for="tel" class="label-control">N° de téléphone</label>
+                                        <input type="text" class="form-control" name="tel" placeholder="Numéro de téléphone" value="{{ old('tel') ?? $compagnie->telephone }}">
                                       </div>
                                       <div class="form-group">
-                                        <label for="emailComp">Email</label>
-                                        <input type="Email" class="form-control" name="emailComp" placeholder="Adresse email" required>
+                                        <label for="email" class="label-control">Email</label>
+                                        <input type="Email" class="form-control" name="email" placeholder="Adresse email" value="{{ old('email') ?? $compagnie->email }}">
                                       </div>
                                       <div class="form-group">
-                                        <label for="adrCom">Adresse</label>
-                                        <textarea class="form-control" rows="2" name="adrComp" placeholder="Adresse de la compagnie"></textarea>
+                                        <label for="adr" class="label-control">Adresse</label>
+                                        <textarea class="form-control" rows="2" name="adr" placeholder="Adresse de la compagnie">{{ old('adr') ?? $compagnie->adresse }}</textarea>
                                       </div>
                                       </div>
                                     </div>
@@ -102,11 +104,11 @@
                                         <div class="form-group">
                                             <div class="checkbox">
                                               <label class="checkbox">
-                                                <input type="checkbox" value="Wi-Fi">Wi-Fi
+                                                <input type="checkbox" value="{{ old('wifi') ?? $compagnie->wifi }}">Wi-Fi
                                             </label>
                                             <br>
                                             <label class="checkbox">
-                                                <input type="checkbox" value="Climatisation">Climatisation
+                                                <input type="checkbox" value="{{ old('clim') ?? $compagnie->climatisation }}">Climatisation
                                             </label>
                                             </div>
                                             
@@ -123,21 +125,21 @@
                                     <div class="box-body">
                                       <div class="col-md-6 col-xm-12">
                                         <div class="form-group">
-                                        <label for="telComp">Compte bancaire</label>
-                                        <input type="text" class="form-control" name="numBankComp" placeholder="Numéro de compte" required>
+                                        <label for="bank" class="label-control">Compte bancaire</label>
+                                        <input type="text" class="form-control" name="bank" placeholder="Numéro de compte" value="{{ old('bank') ?? $compagnie->num_compte_bancaire }}">
                                       </div>
                                       <div class="row">
                                         <div class="col-md-6 col-xm-12">
                                          <div class="form-group">
-                                        <label for="emailComp">Mobile Money</label>
-                                        <input type="Email" class="form-control" name="momoComp" placeholder="Numéro mobile money" required>
+                                        <label for="momo" class="label-control">Mobile Money</label>
+                                        <input type="text" class="form-control" name="momo" placeholder="Numéro mobile money" value="{{ old('momo') ?? $compagnie->momo }}">
                                       </div>
                                       
                                        </div>
                                        <div class="col-md-6 col-xm-12">
                                          <div class="form-group">
-                                        <label for="adrCom">Flooz</label>
-                                        <input type="text" class="form-control" rows="2" name="floozComp" placeholder="Numéro flooz">
+                                        <label for="flooz" class="label-control">Flooz</label>
+                                        <input type="text" class="form-control" rows="2" name="flooz" placeholder="Numéro flooz" value="{{ old('flooz') ?? $compagnie->flooz }}">
                                       </div>
                                       </div>
                                        
@@ -158,20 +160,20 @@
                                     <div class="row">
                                       <div class="col-md-3 col-xm-12">
                                           <div class="form-group">
-                                        <label for="durValidReser">Validité d'un ticket (en jour)</label>
-                                        <input type="int" class="form-control" name="durValidReser" placeholder="Numéro de compte" required>
+                                        <label for="validite" class="label-control">Validité d'un ticket (en jour)</label>
+                                        <input type="number" class="form-control" name="validite" placeholder="Numéro de compte" value="{{ old('validiter') ?? $compagnie->validiterReserv }}">
                                       </div>
                                       </div>
                                       <div class="col-md-3 col-xm-12">
                                         <div class="form-group">
-                                        <label for="nbrJrAvtPenalite">Nombre de jour avant pénalité</label>
-                                        <input type="text" class="form-control" name="nbrJrAvtPenalite" placeholder="Numéro de compte" required>
+                                        <label for="postPenalite" class="label-control">Nombre de jour avant pénalité</label>
+                                        <input type="number" class="form-control" name="postPenalite" placeholder="Numéro de compte" value="{{ old('postPenalite') ?? $compagnie->durPostPenaliter}}">
                                       </div>
                                       </div>
                                       <div class="col-md-3 col-xm-12">
                                         <div class="form-group">
-                                        <label for="pourcentagPenalite">Pourcentage de pénalité (en %)</label>
-                                        <input type="int" class="form-control" name="pourcentagPenalite" placeholder="Numéro de compte" required>
+                                        <label for="penalite" class="label-control">Pourcentage de pénalité (en %)</label>
+                                        <input type="number" class="form-control" name="penalite" placeholder="Numéro de compte" value="{{ old('penalite') ?? $compagnie->penaliter }}">
                                       </div>
                                       </div>
                                     </div>
@@ -179,8 +181,8 @@
                                       <div class="row">
                                         <div class="col-md-9 col-xm-12">
                                           <div class="form-group">
-                                            <label for="msgAvert">Message d'avertissement</label>
-                                            <textarea class="form-control" rows="2" name="msgAvert" required></textarea>
+                                            <label for="msgAverti" class="label-control">Message d'avertissement</label>
+                                            <textarea class="form-control" rows="2" name="msgAverti">{{ old('msgAverti') ?? $compagnie->msgAverti }}</textarea>
                                           </div>
                                       </div>
                                       </div>
@@ -197,7 +199,7 @@
                         
                           <div class="form-group pull-right">
                             <a href="{{ route('compagnies.index') }}" class="btn btn-default">Retour</a>
-                            <a href="#" class="btn btn-primary">Modifier</a>
+                            <button class="btn btn-primary" type="submit">Modifier</button>
                           </div>
                         </div>
                     </div>

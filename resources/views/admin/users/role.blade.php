@@ -1,8 +1,8 @@
-@extends('layouts/masterAdmin', ['title'=>'Users'])
+@extends('layouts/masterAdmin', ['title'=>'Roles'])
 
 @section('content_header')
       <h1>
-        Gestion des utilisateurs
+        Gestion des utilisateurs <small>Attribution de droit</small>
       </h1>
       <ol class="breadcrumb">
       <li><a href="{{ route('Adminhome') }}"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -22,20 +22,32 @@
 				<div class="box-body">
 					<div class="form-group">
 						<label for="emailUser" class="label-control">Utilisateur</label>
-						<select name="emailUser" class="form-control">
-							<option>fadelsylla5@gmail.com</option>
+						<select name="emailUser" class="form-control selectpicker">
+							<option></option>
+							@foreach ($users as $user)
+								
+								<option>{{ $user->email }}</option>
+							@endforeach
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="rolUser" class="label-control">Droit</label>
-						<select name="rolUser" class="form-control">
-							<option>Admin</option>
+						<select name="rolUser" class="form-control selectpicker">
+							<option></option>
+							@foreach ($roles as $role)
+								
+								<option>{{ $role->role }}</option>
+							@endforeach
 						</select>
 					</div>
 					<div class="form-group">
 						<label for="compUser" class="label-control">Compagnie</label>
-						<select name="compUser" class="form-control">
-							<option>ATT</option>
+						<select name="compUser" class="form-control selectpicker">
+							<option></option>
+							@foreach ($compagnies as $comp)
+								
+								<option>{{ $comp->nom }}</option>
+							@endforeach
 						</select>
 					</div>
 				</div>

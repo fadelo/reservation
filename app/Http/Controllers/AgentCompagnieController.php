@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Compagnie;
 use Illuminate\Http\Request;
+use App\Http\Requests\CompagnieFormRequest;
+use Illuminate\Support\Facades\Redirect;
+use Mercuseries\Flashy\Flashy;
 
 class AgentCompagnieController extends Controller
 {
@@ -13,7 +17,9 @@ class AgentCompagnieController extends Controller
      */
     public function index()
     {
-        //
+        $maComp = Compagnie::whereId('1')->first();
+
+        return view ('agent/compagnie/index', compact('maComp'));
     }
 
     /**
@@ -32,7 +38,7 @@ class AgentCompagnieController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CompagnieFormRequest $request)
     {
         //
     }
@@ -45,7 +51,7 @@ class AgentCompagnieController extends Controller
      */
     public function show($id)
     {
-        return view ('agent/compagnie/show');
+        //
     }
 
     /**
@@ -56,7 +62,9 @@ class AgentCompagnieController extends Controller
      */
     public function edit($id)
     {
-        return view ('agent/compagnie/edit');
+        $maComp = Compagnie::findOrFail($id);
+
+        return view ('agent/compagnie/edit', compact('maComp'));
     }
 
     /**
@@ -66,9 +74,34 @@ class AgentCompagnieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CompagnieFormRequest $request, $id)
     {
-        //
+        $maComp = Compagnie::findOrFail($id);
+        
+        dd($maComp);
+
+        $maComp->update([
+            'nom'=>($request->nom),
+            'description'=>($request->des),
+            'rccm'=>($request->rccm),
+            'ifu'=>($request->ifu),
+            'telephone'=>($request->tel),
+            'adresse'=>($request->adr),
+            'email'=>($request->email),
+            'wifi'=>($request->wifi),
+            'climatisation'=>($request->clim),
+            'num_compte_bancaire'=>($request->bank),
+            'momo'=>($request->momo),
+            'flooz'=>($request->fooz),
+            'validiterReserv'=>($request->validiter),
+            'durPostPenaliter'=>($request->postPenaliter),
+            'penaliter'=>($request->penaliter),
+            'msgAverti'=>($request->msgAverti),
+
+        ]);
+        Flashy::info('Les données de votre compagnie on bien été modifié');
+
+        return Redirect::back();
     }
 
     /**
