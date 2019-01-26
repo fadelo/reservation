@@ -19,8 +19,9 @@ class UsersTableSeeder extends Seeder
           'telephone'=>'+22997996112',
           'idVille'=>'1',
           'idComp'=>'1',
+          'role_id'=>'1',
           'email'=>'fad@fad.com',
-          'password'=>'123456789',
+          'password'=>bcrypt('123456789'),
 
       	]);
 
@@ -31,8 +32,22 @@ class UsersTableSeeder extends Seeder
           'telephone'=>'+2299752152',
           'idVille'=>'1',
           'idComp'=>'1',
-          'email'=>'kjean@fadlab.com',
-          'password'=>'123456789',
+          'role_id'=>'2',
+          'email'=>'jean@att.com',
+          'password'=>bcrypt('123456789'),
+
+        ]);
+
+        User::create([
+          'id'=>'3',
+          'nom'=>'TOTO',
+          'prenom'=>'Tata',
+          'telephone'=>'+2299752152',
+          'idVille'=>'1',
+          'idComp'=>null,
+          'role_id'=>'3',
+          'email'=>'toto@fadlab.com',
+          'password'=>bcrypt('123456789'),
 
         ]);
     }

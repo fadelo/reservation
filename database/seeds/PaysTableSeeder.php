@@ -23,5 +23,11 @@ class PaysTableSeeder extends Seeder
         	'code'=>'228',
         	'pays'=>'Togo',
         ]);
+
+        Pays::create([
+            'id'=>'3',
+            'code'=>'227',
+            'pays'=>'Niger',
+        ]);
     }
 }

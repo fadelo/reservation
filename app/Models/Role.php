@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Role extends Model
 {
-    public $timestamp = false;
+    public $timestamps = false;
 
     protected $table = 'roles';
     protected $primaryKey = 'id';
 
     protected $fillable = ['role'];
+
+    public function users(){
+    	$this->hasMany('App\Models\User');
+    }
 }

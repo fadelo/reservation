@@ -23,7 +23,7 @@
 						<div class="form-group">
 							<label for="dateReserv" class="col-sm-4 label-control">Date</label>
 							<div class="col-sm-8">
-								<input type="text" name="dateReserv" id="dateReserv" class="form-control" value="{{ date('d/m/Y') }}" disabled="disabled">
+								<input type="text" name="dateReserv" id="dateReserv" class="form-control" value="{{ date('d/m/Y') }}" readonly="readonly">
 							</div>
 						</div>
 						<br class="hidden-xs"><br class="hidden-xs">
@@ -55,7 +55,7 @@
 						<div class="form-group">
 							<label for="villeDpt" class="col-sm-4 label-control">Départ</label>
 							<div class="col-sm-8">
-								<input type="text" name="villeDpt" id="villeDpt" value="Cotonou" class="form-control" disabled="diseabled">
+								<input type="text" name="villeDpt" id="villeDpt" value="Cotonou" class="form-control" readonly="readonly">
 							</div>
 						</div>
 						<br class="hidden-xs"><br class="hidden-xs">

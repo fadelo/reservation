@@ -41,5 +41,11 @@ class VillesTableSeeder extends Seeder
         	'ville'=>'Kara',
         	'idPays'=>'2',
         ]);
+
+        Ville::create([
+            'id'=>'6',
+            'ville'=>'Niamey',
+            'idPays'=>'3',
+        ]);
     }
 }

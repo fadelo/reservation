@@ -7,6 +7,11 @@ Route::get('/', 'StaticPagesController@index') -> name('index_path');
 Route::get('/about', 'StaticPagesController@about') -> name('about_path');
 Route::get('/faq', 'StaticPagesController@faq') -> name('faq_path');
 Route::get('/contact', 'MessagesController@create') -> name('contact_path');
+Route::post('/trajets', 'StaticPagesController@trajet') -> name('trajets_path');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Routes pour admin
@@ -37,11 +42,13 @@ Route::get('/agent/ficheDeControle', 'AgentReservationsController@fiche') ->name
 Route::get('/agent/clotureReservation', 'AgentReservationsController@cloture') ->name ('AgentClotureReserv');
 
 
-// Routes pour Abonnée
+// Routes pour Client
 
 Route::get('/client', 'ClientPagesController@home') -> name('ClientHome');
 Route::get('/client/compagnies', 'ClientCompagniesController@index')-> name('clientComp');
 Route::get('/client/trajets', 'ClientTrajetsController@index')->name('clientTrajet');
-Route::resource('/client/mes_reservations', 'ClientReservationsController');
+Route::resource('/client/mes_reservations', 'ClientReservationsController')->middleware('client');
+
 
 ?>
+

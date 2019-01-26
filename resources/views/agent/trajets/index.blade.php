@@ -33,7 +33,8 @@
 			      <div class="modal-body">
 			        <div class="form-group">
 			        	<label class="label-control" for="villeDpt">Ville de départ</label>
-			        	<select class="form-control selectpicker" name="villeDpt">
+			        	<select class="form-control selectpicker" name="villeDpt" required="required">
+			        		<option></option>
 			        		@foreach ($villes as $ville)
 			        			<option>{{ $ville->ville }}</option>
 			        		@endforeach
@@ -41,7 +42,8 @@
 			        </div>
 			        <div class="form-group">
 			        	<label class="label-control" for="villeArr">Ville d'arrivée</label>
-			        	<select class="form-control selectpicker" name="villeArr">
+			        	<select class="form-control selectpicker" name="villeArr" required="required">
+			        		<option></option>
 			        		@foreach ($villes as $ville)
 			        			<option>{{ $ville->ville }}</option>
 			        		@endforeach
@@ -49,7 +51,7 @@
 			        </div>
 			        <div class="form-group">
 			        	<label class="label-control" for="tarif">Tarif</label>
-			        	<input type="number" class="form-control" name="tarif">
+			        	<input type="number" class="form-control" name="tarif" required="required">
 			        </div>
 			      </div>
 			      <div class="modal-footer">

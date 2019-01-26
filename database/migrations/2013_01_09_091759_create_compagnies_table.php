@@ -31,7 +31,7 @@ class CreateCompagniesTable extends Migration
             $table->integer('penaliter');
             $table->integer('durPostPenaliter');
             $table->string('msgAverti');
-            $table->timestamps();
+            
         });
     }
 

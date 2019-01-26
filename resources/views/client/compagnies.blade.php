@@ -14,7 +14,7 @@
 @section('content')
 	<div class="row" style="margin-top: 5px;">
       <div class="col-md-4 col-xs-12">
-          <a href="{{ route('compagnies.create') }}" class="btn btn-primary btn-block">  Reserverz plutôt directement</a>
+          
       </div>
       <div class="col-md-4 col-xs-12" style="margin-top: 10px;">
           
@@ -51,14 +51,14 @@
                                 <li><a href="#Contacts" data-toggle="tab">Contacts</a></li>
                                 <li><a href="#Avantage" data-toggle="tab">Avantages</a></li>
                                 <li><a href="#Paiement" data-toggle="tab">Comptes de paiement</a></li>
-                                <li><a href="#Parametres" data-toggle="tab">Parametres</a></li>
+                                <li><a href="#Plus" data-toggle="tab">Plus</a></li>
                                 
                             </ul>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div class="tab-pane fade in active" id="Identification">
-                                    <h4>Volet d'identification de la compagnie</h4>
+                                    
                                         <div class="box-body">
                                           <div class="row">
                                             <div class="col-md-6 col-xm-12">
@@ -83,20 +83,12 @@
                                           </div>
                                             </div>
                                           </div>
-                                          <div class="row">
-                                            <div class="col-md-12 col-xs-12">
-                                              <div class="form-group">
-                                            <label for="logoComp">Logo</label>
-                                            <input type="file" name="logoComp" id="logoComp" disabled="disabled">
-                                            <p class="help-block">Taille maximum : 2Mo</p>
-                                          </div>
-                                            </div>
-                                          </div>
+                                          
                                         </div>
                                     
                                 </div>
                                 <div class="tab-pane fade" id="Contacts">
-                                    <h4>Volet des Contacts de la compagnie</h4>
+                                   
                                     <div class="box-body">
                                       <div class="col-md-12 col-xm-12">
                                         <div class="form-group">
@@ -116,7 +108,7 @@
                                     
                                 </div>
                                 <div class="tab-pane fade" id="Avantage">
-                                    <h4>Volet des avantages de la compagnie</h4>
+                                    
                                     <div class="box-body">
                                         <div class="form-group">
                                             <div class="checkbox">
@@ -133,7 +125,7 @@
                                       </div>
                                 
                                 <div class="tab-pane fade" id="Paiement">
-                                    <h4> Volet des Comptes de paiement</h4>
+                                    
                                     <div class="box-body">
                                       <div class="col-md-12 col-xm-12">
                                         <div class="form-group">
@@ -163,8 +155,8 @@
                                     
                                     
                                 </div>
-                                <div class="tab-pane fade" id="Parametres">
-                                    <h4> Volet de Paramètrage</h4>
+                                <div class="tab-pane fade" id="Plus">
+                                    
                                     <div class="box-body">
                                     <div class="row">
                                       <div class="col-md-4 col-xm-12">

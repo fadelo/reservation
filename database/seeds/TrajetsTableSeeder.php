@@ -35,5 +35,13 @@ class TrajetsTableSeeder extends Seeder
        		'idComp'=>'2',
        		'tarif'=>'5000',
        ]); 
+
+       Trajet::create([
+          'id'=>'4',
+          'idVilleDpt'=>'1',
+          'idVilleArr'=>'6',
+          'idComp'=>'6',
+          'tarif'=>'18000',
+       ]); 
     }
 }

@@ -23,5 +23,17 @@ class LieuEmbarqTableSeeder extends Seeder
         	'idTrjt'=>'1',
         	'lieuEmbarq'=>'Stade',
         ]);
+
+        LieuEmbarq::create([
+            'id'=>'3',
+            'idTrjt'=>'2',
+            'lieuEmbarq'=>'Auto-garre',
+        ]);
+
+        LieuEmbarq::create([
+            'id'=>'4',
+            'idTrjt'=>'4',
+            'lieuEmbarq'=>'Base, Zongo',
+        ]);
     }
 }

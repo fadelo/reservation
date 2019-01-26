@@ -22,7 +22,7 @@ class CreateTrajetsTable extends Migration
             $table->integer('idComp')->unsigned();
             $table->foreign('idComp')->references('id')->on('compagnies')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('tarif');
-            $table->timestamps();
+            
         });
     }
 

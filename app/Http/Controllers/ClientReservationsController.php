@@ -57,7 +57,7 @@ class ClientReservationsController extends Controller
      */
     public function store(Request $request)
     {
-        dd('ca marche');
+        dd($request);
     }
 
     /**

@@ -15,15 +15,29 @@ class HeureDepartTableSeeder extends Seeder
         HeureDepart::create([
         	'id'=>'1',
         	'idTrjt'=>'1',
-        	'heureDpt'=>'13',
-        	'heureEnreg'=>'12',
+        	'heureDpt'=>'13h',
+        	'heureEnreg'=>'12h',
         ]);
 
         HeureDepart::create([
         	'id'=>'2',
         	'idTrjt'=>'1',
-        	'heureDpt'=>'19',
-        	'heureEnreg'=>'18',
+        	'heureDpt'=>'19h',
+        	'heureEnreg'=>'18h',
+        ]);
+
+        HeureDepart::create([
+            'id'=>'3',
+            'idTrjt'=>'3',
+            'heureDpt'=>'15h',
+            'heureEnreg'=>'14h',
+        ]);
+
+        HeureDepart::create([
+            'id'=>'4',
+            'idTrjt'=>'4',
+            'heureDpt'=>'15h',
+            'heureEnreg'=>'14h',
         ]); 
     }
 }

@@ -17,8 +17,8 @@ class CreateHeureDepartsTable extends Migration
             $table->increments('id');
             $table->integer('idTrjt')->unsigned();
             $table->foreign('idTrjt')->references('id')->on('trajets');
-            $table->time('heureDpt');
-            $table->time('heureEnreg');
+            $table->string('heureDpt');
+            $table->string('heureEnreg');
             $table->timestamps();
         });
     }

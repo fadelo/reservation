@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LieuEmbarq extends Model
 {
-    public $timestamp = false;
+    public $timestamps = false;
 
     protected $table = 'lieu_embarqs';
     protected $primariKey = 'id';

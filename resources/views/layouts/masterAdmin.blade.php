@@ -43,7 +43,7 @@
   <!-- Header  -->
     <header class="main-header">
     <!-- Logo -->
-      <a href="{{route('Adminhome')}}" class="logo">
+      <a href="{{route('index_path')}}" class="logo" title="Retour vers l'acceuil">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">e-R</span>
           <!-- logo for regular state and mobile devices -->
@@ -188,12 +188,20 @@
                   <!-- /.dropdown -->
                   <li class="dropdown">
                       <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                          <i>Fadel Sylla </i> <i class="fa fa-caret-down"></i>
+                          <i>{{ Auth::user()->nom.' '.Auth::user()->prenom }}</i> <i class="fa fa-caret-down"></i>
                       </a>
                       <ul class="dropdown-menu dropdown-user">
                           <li><a href="#"><i class="fa fa-user fa-fw"></i> Mon Profile</a></li>
                           <li class="divider"></li>
-                          <li><a href="loginAdmin.php"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                          <li>
+                            <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        <i class="fa fa-sign-out fa-fw">Déconnexion</i>
+                                    </a>
+                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                           </li>
                       </ul>
                       <!-- /.dropdown-user -->

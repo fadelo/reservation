@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Models\Role;
 
 class RolesTableSeeder extends Seeder
 {
@@ -13,17 +14,17 @@ class RolesTableSeeder extends Seeder
     {
         Role::create([
         	'id'=>'1',
-        	'role'=>'Admin'
+        	'role'=>'Admin',
         	]);
 
         Role::create([
         	'id'=>'2',
-        	'role'=>'Agent'
+        	'role'=>'Agent',
         	]);
 
         Role::create([
         	'id'=>'3',
-        	'role'=>'Client'
+        	'role'=>'Client',
         	]);
     }
 }

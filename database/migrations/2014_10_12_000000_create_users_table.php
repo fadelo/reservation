@@ -20,12 +20,16 @@ class CreateUsersTable extends Migration
             $table->string('telephone');
             $table->integer('idVille')->unsigned();
             $table->foreign('idVille')->references('id')->on('villes');
-            $table->integer('idComp')->unsigned();
+            $table->unsignedInteger('idComp')->nullable();
             $table->foreign('idComp')->references('id')->on('compagnies');
+            $table->unsignedInteger('role_id');
+            $table->foreign('role_id')->references('id')->on('roles')
+                  ->onDelete('cascade')->onUpdate('cascade');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            
             $table->timestamps();
         });
     }

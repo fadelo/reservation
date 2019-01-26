@@ -37,13 +37,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/84A60109-4722-B547-83F0-4F944594AEFE/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/D50D5C43-2FD2-E649-8437-F4E3858B1430/abn/main.css"/><script type="text/javascript" src="http://gc.kis.v2.scr.kaspersky-labs.com/84A60109-4722-B547-83F0-4F944594AEFE/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="http://gc.kis.v2.scr.kaspersky-labs.com/D50D5C43-2FD2-E649-8437-F4E3858B1430/abn/main.css"/>
 </head>
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
   <!-- Header  -->
     <header class="main-header">
     <!-- Logo -->
-      <a href="{{route('Adminhome')}}" class="logo">
+      <a href="{{route('index_path')}}" class="logo" title="Retour vers l'acceuil">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini">e-R</span>
           <!-- logo for regular state and mobile devices -->
@@ -193,7 +193,7 @@
                       <ul class="dropdown-menu dropdown-user">
                           <li><a href="#"><i class="fa fa-user fa-fw"></i> Mon Profile</a></li>
                           <li class="divider"></li>
-                          <li><a href="loginAdmin.php"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
+                          <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Déconnexion</a>
                           </li>
                       </ul>
                       <!-- /.dropdown-user -->
